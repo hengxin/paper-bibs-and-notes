@@ -15,16 +15,152 @@
 \section{Books} \label{section:books}
 
 \bib{\bibentry{TIS:Book2001}}
-\note{\it It is researchers-oriented. Highly recommended.}
+\note{\it 
+  It is researchers-oriented. Highly recommended.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Transactional Consistency Models} \label{section:tcm}
 
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Frameworks} \label{ss:framework}
+
+\bib{\bibentry{CritiqueIsolation:SIGMOD1995}}
+\note{\it
+  Defines Isolation Levels in terms of phenomena;
+  Introduces new phenomena;
+  Define Snapshot Isolation.
+}
+
+\bib{\bibentry{IsolationHistory:IST1997}}
+\note{\it 
+  This paper formulates these different degrees of isolation in terms of histories, 
+  as in the case of the usual serialization theory 
+  and proposes timestamp-based protocols for different degrees of isolation.
+}
+
+\bib{\bibentry{PushPull:PLDI2015}}
+\note{\it
+  We present a general theory of serializability, 
+  unifying a wide range of transactional algorithms, 
+  including some that are yet to come.
+  To this end, we provide a compact semantics in which 
+  concurrent transactions PUSH their effects into the shared view 
+  (or UNPUSH to recall effects) 
+  and PULL the effects of potentially uncommitted concurrent transactions 
+  into their local view (or UNPULL to detangle).
+}
+
+\bib{\bibentry{Crooks:PODC2017}}
+\note{\it 
+  This paper introduces the first state-based formalization of isolation guarantees.
+}
+
+\bib{\bibentry{ClientCentric:PhDThesis2019}}
+\note{\it
+  The PhD Thesis version of~\cite{Crooks:PODC2017}.
+}
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Serializability} \label{ss:sr}
+
+\bib{\bibentry{PL:CACM1976}}
+\note{\it 
+  This is the first paper to formalize mathematically the concurrency control problem.
+  It also defines ``conflict serializability'', 
+  which is termed DSR in~\cite{Papadimitriou:JACM1979}.
+}
+
+\bib{\bibentry{Papadimitriou:JACM1979}}
+\note{\it
+  It is shown that recognizing the transaction histories that are serializable
+  is an NP-complete problem.
+  Several efficiently recognizable subclasses are introduced.
+}
+
+\bib{\bibentry{SerializabilityLocking:JACM1984}}
+\note{\it
+  It is shown that locking cannot achieve the full power of serializability.
+  An exact characterization of the schedules that can be produced 
+  if locking is used to control concurrency is given for two versions of serializability:
+  state serializability and view serializability.
+
+  See also its STOC conference version~\cite{SerializabilityLocking:STOC1981}.
+}
+
+\bib{\bibentry{OneCopySR:TSE1984}}
+\note{\it
+  Introduce One Copy Serializability (1SR), 
+  as a distributed/replicated counterpart of Serializability in a single-server system.
+}
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Snapshot Isolation} \label{ss:si}
+
+\bib{\bibentry{CritiqueSI:EuroSys2012}}
+\note{\it 
+  We introduce write-snapshot isolation, a novel isolation level 
+  that has a performance comparable with that of snapshot isolation, 
+  and yet provides serializability. 
+  The main insight in write-snapshot isolation is 
+  to prevent read-write conflicts in contrast to write-write conflicts 
+  that are prevented by snapshot isolation.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theory} \label{section:theory}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Protocols} \label{section:protocols}
+\section{Robustness (and Dependency Graphs)} \label{section:robustness}
 
+\bib{\bibentry{Fekete:TODS2005}}
+\note{\it
+  This article develops a theory that characterizes 
+  when nonserializable executions of applications can occur under SI.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Concurrency Control Protocols} \label{section:cc}
+
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Overview} \label{ss:cc-overview}
+
+\bib{\bibentry{CC:CSUR1981}}
+\note{\it 
+  In this paper we survey, consolidate, and present the state of the art 
+  in distributed database concurrency control.
+  The heart of our analysts is a decomposition of the concurrency control problem 
+  into two major subproblems: read-write and write-write synchronization.
+  We describe a series of synchronization techniques for solving each subproblem 
+  and show how to combine these techniques into algorithms 
+  for solving the entire concurrency control problem.
+  Such algorithms are called ``concurrency control methods.''
+  We describe 48 principal methods, including all practical algorithms 
+  that have appeared m the literature plus several new ones.
+  We concentrate on the structure and correctness of concurrency control algorithms.
+  Issues of performance are given only secondary treatment.
+}
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Locking} \label{ss:locking}
+
+\bib{\bibentry{Beyond2PL:JACM1985}}
+\note{\it
+  Graph protocols.
+}
+
+\bib{\bibentry{CCLocking:CSUR1998}}
+\note{\it 
+  This tutorial reviews CC methods based on standard locking, 
+  restart-oriented locking methods, two-phase processing methods 
+  including optimistic CC, and hybrid methods 
+  (combining optimistic CC and locking) in centralized systems.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Formal Methods} \label{section:formal-methods}
+
+\bib{\bibentry{ProgramLogic2PL:TR2017}}
+\note{\it 
+  We present a program logic for serializable transactions 
+  that are able to manipulate a shared storage. 
+
+   We show this by providing the first application of our logic 
+   in terms of the Two-phase locking (2pl) protocol which ensures serializability.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systems} \label{section:systems}
 

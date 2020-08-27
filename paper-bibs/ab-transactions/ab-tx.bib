@@ -1,5 +1,6 @@
 % ab-tx.bib
 
+%% Books
 @book{TIS:Book2001,
   author = {Weikum, Gerhard and Vossen, Gottfried},
   title = {Transactional Information Systems: Theory, Algorithms, and the Practice of Concurrency Control and Recovery},
@@ -7,4 +8,282 @@
   isbn = {9780080519562},
   publisher = {Morgan Kaufmann Publishers Inc.},
   address = {San Francisco, CA, USA}
+}
+
+%% Specs
+
+%%% Frameworks
+@inproceedings{10.1145/223784.223785,
+  author = {Berenson, Hal and Bernstein, Phil and Gray, Jim and Melton, Jim and O'Neil, Elizabeth and O'Neil, Patrick},
+  title = {A Critique of ANSI SQL Isolation Levels},
+  year = {1995},
+  isbn = {0897917316},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/223784.223785},
+  doi = {10.1145/223784.223785},
+  booktitle = {Proceedings of the 1995 ACM SIGMOD International Conference on Management of Data},
+  pages = {1–10},
+  numpages = {10},
+  location = {San Jose, California, USA},
+  series = {SIGMOD '95}
+}
+
+@article{CritiqueIsolation:SIGMOD1995,
+  author = {Berenson, Hal and Bernstein, Phil and Gray, Jim and Melton, Jim and O'Neil, Elizabeth and O'Neil, Patrick},
+  title = {A Critique of ANSI SQL Isolation Levels},
+  year = {1995},
+  issue_date = {May 1995},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {24},
+  number = {2},
+  issn = {0163-5808},
+  url = {https://doi.org/10.1145/568271.223785},
+  doi = {10.1145/568271.223785},
+  journal = {SIGMOD Rec.},
+  month = may,
+  pages = {1–10},
+  numpages = {10}
+}
+
+@article{IsolationHistory:IST1997,
+  title = "A theoretical formulation for degrees of isolation in databases",
+  author = "Vijayalakshmi Atluri and Elisa Bertino and Sushil Jajodia",
+  journal = "Information and Software Technology",
+  volume = "39",
+  number = "1",
+  pages = "47 - 53",
+  year = "1997",
+  issn = "0950-5849",
+  doi = "https://doi.org/10.1016/0950-5849(96)01109-3",
+  url = "http://www.sciencedirect.com/science/article/pii/0950584996011093",
+}
+
+@inproceedings{PushPull:PLDI2015,
+  author = {Koskinen, Eric and Parkinson, Matthew},
+  title = {The Push/Pull Model of Transactions},
+  year = {2015},
+  isbn = {9781450334686},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2737924.2737995},
+  doi = {10.1145/2737924.2737995},
+  booktitle = {Proceedings of the 36th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+  pages = {186–195},
+  numpages = {10},
+  location = {Portland, OR, USA},
+  series = {PLDI '15}
+}
+
+@inproceedings{Crooks:PODC2017,
+  author = {Crooks, Natacha and Pu, Youer and Alvisi, Lorenzo and Clement, Allen},
+  title = {Seeing is Believing: A Client-Centric Specification of Database Isolation},
+  year = {2017},
+  isbn = {9781450349925},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3087801.3087802},
+  doi = {10.1145/3087801.3087802},
+  booktitle = {Proceedings of the ACM Symposium on Principles of Distributed Computing},
+  pages = {73–82},
+  numpages = {10},
+  location = {Washington, DC, USA},
+  series = {PODC '17}
+}
+
+@phdthesis{ClientCentric:PhDThesis2019,
+  author = {Natacha Crooks}, 
+  title  = {A Client-Centric Approach to Transactional Datastores},
+  school = {The University of Texas at Austin},
+  year   = 2019,
+}
+
+%%% Serializability
+@article{PL:CACM1976,
+  author = {Eswaran, K. P. and Gray, J. N. and Lorie, R. A. and Traiger, I. L.},
+  title = {The Notions of Consistency and Predicate Locks in a Database System},
+  year = {1976},
+  issue_date = {Nov. 1976},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {19},
+  number = {11},
+  issn = {0001-0782},
+  url = {https://doi.org/10.1145/360363.360369},
+  doi = {10.1145/360363.360369},
+  journal = {Commun. ACM},
+  month = nov,
+  pages = {624–633},
+  numpages = {10},
+}
+
+@article{Papadimitriou:JACM1979,
+  author = {Papadimitriou, Christos H.},
+  title = {The Serializability of Concurrent Database Updates},
+  year = {1979},
+  issue_date = {Oct. 1979},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {26},
+  number = {4},
+  issn = {0004-5411},
+  url = {https://doi.org/10.1145/322154.322158},
+  doi = {10.1145/322154.322158},
+  journal = {J. ACM},
+  month = oct,
+  pages = {631–653},
+  numpages = {23}
+}
+
+@inproceedings{SerializabilityLocking:STOC1981,
+  author = {Yannakakis, Mihalis},
+  title = {Issues of Correctness in Database Concurrency Control by Locking},
+  year = {1981},
+  isbn = {9781450373920},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/800076.802490},
+  doi = {10.1145/800076.802490},
+  booktitle = {Proceedings of the Thirteenth Annual ACM Symposium on Theory of Computing},
+  pages = {363–367},
+  numpages = {5},
+  location = {Milwaukee, Wisconsin, USA},
+  series = {STOC '81}
+}
+
+@article{SerializabilityLocking:JACM1984,
+  author = {Yannakakis, Mihalis},
+  title = {Serializability by Locking},
+  year = {1984},
+  issue_date = {April 1984},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {31},
+  number = {2},
+  issn = {0004-5411},
+  url = {https://doi.org/10.1145/62.322425},
+  doi = {10.1145/62.322425},
+  journal = {J. ACM},
+  month = mar,
+  pages = {227–244},
+  numpages = {18}
+}
+
+@article{OneCopySR:TSE1984,
+  author = {Attar, Rony and Bernstein, Philip A. and Goodman, Nathan},
+  title = {Site Initialization, Recovery, and Backup in a Distributed Database System},
+  year = {1984},
+  issue_date = {November 1984},
+  publisher = {IEEE Press},
+  volume = {10},
+  number = {6},
+  issn = {0098-5589},
+  url = {https://doi.org/10.1109/TSE.1984.5010293},
+  doi = {10.1109/TSE.1984.5010293},
+  journal = {IEEE Trans. Softw. Eng.},
+  month = nov,
+  pages = {645–650},
+  numpages = {6},
+}
+
+%%% Snapshot Isolation
+@inproceedings{CritiqueSI:EuroSys2012,
+  author = {Yabandeh, Maysam and G\'{o}mez Ferro, Daniel},
+  title = {A Critique of Snapshot Isolation},
+  year = {2012},
+  isbn = {9781450312233},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2168836.2168853},
+  doi = {10.1145/2168836.2168853},
+  booktitle = {Proceedings of the 7th ACM European Conference on Computer Systems},
+  pages = {155–168},
+  numpages = {14},
+  location = {Bern, Switzerland},
+  series = {EuroSys '12}
+}
+
+@article{Fekete:TODS2005,
+  author = {Fekete, Alan and Liarokapis, Dimitrios and O'Neil, Elizabeth and O'Neil, Patrick and Shasha, Dennis},
+  title = {Making Snapshot Isolation Serializable},
+  year = {2005},
+  issue_date = {June 2005},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {30},
+  number = {2},
+  issn = {0362-5915},
+  url = {https://doi.org/10.1145/1071610.1071615},
+  doi = {10.1145/1071610.1071615},
+  journal = {ACM Trans. Database Syst.},
+  month = jun,
+  pages = {492–528},
+  numpages = {37},
+}
+
+%% Concurrency Control
+@article{CC:CSUR1981,
+  author = {Bernstein, Philip A. and Goodman, Nathan},
+  title = {Concurrency Control in Distributed Database Systems},
+  year = {1981},
+  issue_date = {June 1981},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {13},
+  number = {2},
+  issn = {0360-0300},
+  url = {https://doi.org/10.1145/356842.356846},
+  doi = {10.1145/356842.356846},
+  journal = {ACM Comput. Surv.},
+  month = jun,
+  pages = {185–221},
+  numpages = {37}
+}
+
+%%% Locking
+@article{Beyond2PL:JACM1985,
+  author = {Buckley, G. N. and Silberschatz, A.},
+  title = {Beyond Two-Phase Locking},
+  year = {1985},
+  issue_date = {April 1985},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {32},
+  number = {2},
+  issn = {0004-5411},
+  url = {https://doi.org/10.1145/3149.3151},
+  doi = {10.1145/3149.3151},
+  journal = {J. ACM},
+  month = apr,
+  pages = {314–343},
+  numpages = {30}
+}
+
+@article{CCLocking:CSUR1998,
+  author = {Thomasian, Alexander},
+  title = {Concurrency Control: Methods, Performance, and Analysis},
+  year = {1998},
+  issue_date = {March 1998},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {30},
+  number = {1},
+  issn = {0360-0300},
+  url = {https://doi.org/10.1145/274440.274443},
+  doi = {10.1145/274440.274443},
+  journal = {ACM Comput. Surv.},
+  month = mar,
+  pages = {70–119},
+  numpages = {50},
+}
+
+%% Formal Methods
+@techreport{ProgramLogic2PL:TR2017,
+  author      = "David Harver Pollak",
+  title       = "Reasoning about Two-Phase Locking Concurrency Control",
+  institution = "",
+  year        = "2017",
+  type        = "Technical Report",
+  month       = "June",
 }
