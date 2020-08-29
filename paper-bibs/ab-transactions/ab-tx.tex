@@ -76,6 +76,15 @@
   Several efficiently recognizable subclasses are introduced.
 }
 
+\bib{\bibentry{DistributedLocking:PODS1982}}
+\note{\it
+  We examine the problem of determining whether a set of locked transactions, 
+  accessing a distributed database, is guaranteed to produce only serializable schedules. 
+  For a pair of transactions we prove that this concurrency control problem 
+  (which is polynomially solvable for centralized databases) 
+  is in general coNP-complete.
+}
+
 \bib{\bibentry{SerializabilityLocking:JACM1984}}
 \note{\it
   It is shown that locking cannot achieve the full power of serializability.
@@ -90,6 +99,25 @@
 \note{\it
   Introduce One Copy Serializability (1SR), 
   as a distributed/replicated counterpart of Serializability in a single-server system.
+}
+
+\bib{\bibentry{DCC:SIAM1985}}
+\note{\it 
+  We present a formal framework for distributed databases, 
+  and we study the complexity of the concurrency control problem in this framework.
+  Our transactions are partially ordered sets of actions, 
+  as opposed to the straight-line programs of the centralized case.
+  The concurrency control algorithm, or scheduler, is itself a distributed program.
+}
+
+\bib{\bibentry{SSI:VLDB2012}}
+\note{\it 
+  This paper describes our experience implementing PostgreSQL’s 
+  new serializable isolation level.
+  It is based on the recently-developed Serializable Snapshot Isolation (SSI) technique.
+  This is the first implementation of SSI in a production database release 
+  as well as the first in a database that did not previously 
+  have a lock-based serializable isolation level. 
 }
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Snapshot Isolation} \label{ss:si}

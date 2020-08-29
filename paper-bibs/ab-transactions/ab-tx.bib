@@ -152,6 +152,22 @@
   series = {STOC '81}
 }
 
+@inproceedings{DistributedLocking:PODS1982,
+  author = {Kanellakis, Paris C. and Papadimitriou, Christos H.},
+  title = {Is Distributed Locking Harder?},
+  year = {1982},
+  isbn = {0897910702},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/588111.588129},
+  doi = {10.1145/588111.588129},
+  booktitle = {Proceedings of the 1st ACM SIGACT-SIGMOD Symposium on Principles of Database Systems},
+  pages = {98–107},
+  numpages = {10},
+  location = {Los Angeles, California},
+  series = {PODS '82}
+}
+
 @article{SerializabilityLocking:JACM1984,
   author = {Yannakakis, Mihalis},
   title = {Serializability by Locking},
@@ -187,6 +203,24 @@
   numpages = {6},
 }
 
+@article{DCC:SIAM1985,
+  author = {Kanellakis, Paris C. and Papadimitriou, Christos H.},
+  title = {The Complexity of Distributed Concurrency Control},
+  year = {1985},
+  issue_date = {Feb. 1985},
+  publisher = {Society for Industrial and Applied Mathematics},
+  address = {USA},
+  volume = {14},
+  number = {1},
+  issn = {0097-5397},
+  url = {https://doi.org/10.1137/0214004},
+  doi = {10.1137/0214004},
+  journal = {SIAM J. Comput.},
+  month = feb,
+  pages = {52–74},
+  numpages = {23}
+}
+
 %%% Snapshot Isolation
 @inproceedings{CritiqueSI:EuroSys2012,
   author = {Yabandeh, Maysam and G\'{o}mez Ferro, Daniel},
@@ -220,6 +254,24 @@
   month = jun,
   pages = {492–528},
   numpages = {37},
+}
+
+@article{SSI:VLDB2012,
+  author = {Ports, Dan R. K. and Grittner, Kevin},
+  title = {Serializable Snapshot Isolation in PostgreSQL},
+  year = {2012},
+  issue_date = {August 2012},
+  publisher = {VLDB Endowment},
+  volume = {5},
+  number = {12},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/2367502.2367523},
+  doi = {10.14778/2367502.2367523},
+  abstract = {This paper describes our experience implementing PostgreSQL's new serializable isolation level. It is based on the recently-developed Serializable Snapshot Isolation (SSI) technique. This is the first implementation of SSI in a production database release as well as the first in a database that did not previously have a lock-based serializable isolation level. We reflect on our experience and describe how we overcame some of the resulting challenges, including the implementation of a new lock manager, a technique for ensuring memory usage is bounded, and integration with other PostgreSQL features. We also introduce an extension to SSI that improves performance for read-only transactions. We evaluate PostgreSQL's serializable isolation level using several benchmarks and show that it achieves performance only slightly below that of snapshot isolation, and significantly outperforms the traditional two-phase locking approach on read-intensive workloads.},
+  journal = {Proc. VLDB Endow.},
+  month = aug,
+  pages = {1850–1861},
+  numpages = {12}
 }
 
 %% Concurrency Control
