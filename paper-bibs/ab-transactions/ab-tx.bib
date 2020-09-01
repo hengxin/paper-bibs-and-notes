@@ -1,6 +1,15 @@
 % ab-tx.bib
 
 %% Books
+@book{Bernstein:Book1987,
+  author = {Bernstein, Philip A. and Hadzilacos, Vassco and Goodman, Nathan},
+  title = {Concurrency Control and Recovery in Database Systems},
+  year = {1987},
+  isbn = {0201107155},
+  publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+  address = {USA}
+}
+
 @book{TIS:Book2001,
   author = {Weikum, Gerhard and Vossen, Gottfried},
   title = {Transactional Information Systems: Theory, Algorithms, and the Practice of Concurrency Control and Recovery},
@@ -13,22 +22,6 @@
 %% Specs
 
 %%% Frameworks
-@inproceedings{10.1145/223784.223785,
-  author = {Berenson, Hal and Bernstein, Phil and Gray, Jim and Melton, Jim and O'Neil, Elizabeth and O'Neil, Patrick},
-  title = {A Critique of ANSI SQL Isolation Levels},
-  year = {1995},
-  isbn = {0897917316},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  url = {https://doi.org/10.1145/223784.223785},
-  doi = {10.1145/223784.223785},
-  booktitle = {Proceedings of the 1995 ACM SIGMOD International Conference on Management of Data},
-  pages = {1–10},
-  numpages = {10},
-  location = {San Jose, California, USA},
-  series = {SIGMOD '95}
-}
-
 @article{CritiqueIsolation:SIGMOD1995,
   author = {Berenson, Hal and Bernstein, Phil and Gray, Jim and Melton, Jim and O'Neil, Elizabeth and O'Neil, Patrick},
   title = {A Critique of ANSI SQL Isolation Levels},
@@ -219,6 +212,20 @@
   month = feb,
   pages = {52–74},
   numpages = {23}
+}
+
+@techreport{CausalSR:Raynal1996,
+  TITLE = {{From Serializable to Causal Transactions for Collaborative Applications}},
+  AUTHOR = {Raynal, Michel and Thia-Kime, G. and Ahamad, M.},
+  URL = {https://hal.inria.fr/inria-00073888},
+  TYPE = {Research Report},
+  NUMBER = {RR-2802},
+  INSTITUTION = {{INRIA}},
+  YEAR = {1996},
+  KEYWORDS = {FAULT-TOLERANCE ; TRANSACTIONS ; CONSISTENCY ; CAUSALITY ; SERIALIZABILITY},
+  PDF = {https://hal.inria.fr/inria-00073888/file/RR-2802.pdf},
+  HAL_ID = {inria-00073888},
+  HAL_VERSION = {v1},
 }
 
 %%% Snapshot Isolation

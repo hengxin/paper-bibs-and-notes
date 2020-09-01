@@ -1,5 +1,6 @@
 % ab-tx.tex
 
+% !TEX program = pdflatex
 \documentclass[12pt, letterpaper]{article}
 
 \input{../preamble}
@@ -13,6 +14,10 @@
 \thispagestyle{fancy}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Books} \label{section:books}
+
+\bib{\bibentry{Bernstein:Book1987}}
+\note{\it
+}
 
 \bib{\bibentry{TIS:Book2001}}
 \note{\it 
@@ -118,6 +123,11 @@
   This is the first implementation of SSI in a production database release 
   as well as the first in a database that did not previously 
   have a lock-based serializable isolation level. 
+}
+
+\bib{\bibentry{CausalSR:Raynal1996}}
+\note{\it
+  It defines Causal Serializability.
 }
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Snapshot Isolation} \label{ss:si}
