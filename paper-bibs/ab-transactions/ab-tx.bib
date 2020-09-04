@@ -53,6 +53,15 @@
   url = "http://www.sciencedirect.com/science/article/pii/0950584996011093",
 }
 
+@phdthesis{Adya:PhDThesis1999,
+  author = {Adya, Atul and Liskov, Barbara H.},
+  title = {Weak Consistency: A Generalized Theory and Optimistic Implementations for Distributed Transactions},
+  year = {1999},
+  publisher = {Massachusetts Institute of Technology},
+  address = {USA},
+  note = {AAI0800775}
+}
+
 @inproceedings{PushPull:PLDI2015,
   author = {Koskinen, Eric and Parkinson, Matthew},
   title = {The Push/Pull Model of Transactions},
@@ -67,6 +76,24 @@
   numpages = {10},
   location = {Portland, OR, USA},
   series = {PLDI '15}
+}
+
+@InProceedings{Gotsman:CONCUR2015,
+  author =	{Andrea Cerone and Giovanni Bernardi and Alexey Gotsman},
+  title =	{{A Framework for Transactional Consistency Models with Atomic Visibility}},
+  booktitle =	{26th International Conference on Concurrency Theory (CONCUR 2015)},
+  pages =	{58--71},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-939897-91-0},
+  ISSN =	{1868-8969},
+  year =	{2015},
+  volume =	{42},
+  editor =	{Luca Aceto and David de Frutos Escrig},
+  publisher =	{Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{http://drops.dagstuhl.de/opus/volltexte/2015/5375},
+  URN =		{urn:nbn:de:0030-drops-53756},
+  doi =		{10.4230/LIPIcs.CONCUR.2015.58},
 }
 
 @inproceedings{Crooks:PODC2017,
@@ -281,6 +308,36 @@
   numpages = {12}
 }
 
+@inproceedings{GSI:SRDS2005,
+  author = {Elnikety, Sameh and Zwaenepoel, Willy and Pedone, Fernando},
+  title = {Database Replication Using Generalized Snapshot Isolation},
+  year = {2005},
+  isbn = {076952463X},
+  publisher = {IEEE Computer Society},
+  address = {USA},
+  url = {https://doi.org/10.1109/RELDIS.2005.14},
+  doi = {10.1109/RELDIS.2005.14},
+  booktitle = {Proceedings of the 24th IEEE Symposium on Reliable Distributed Systems},
+  pages = {73–84},
+  numpages = {12},
+  series = {SRDS '05}
+}
+
+@inproceedings{ClockSI:SRDS2013,
+  author = {Du, Jiaqing and Elnikety, Sameh and Zwaenepoel, Willy},
+  title = {Clock-SI: Snapshot Isolation for Partitioned Data Stores Using Loosely Synchronized Clocks},
+  year = {2013},
+  isbn = {9780769551159},
+  publisher = {IEEE Computer Society},
+  address = {USA},
+  url = {https://doi.org/10.1109/SRDS.2013.26},
+  doi = {10.1109/SRDS.2013.26},
+  booktitle = {Proceedings of the 2013 IEEE 32nd International Symposium on Reliable Distributed Systems},
+  pages = {173–184},
+  numpages = {12},
+  series = {SRDS '13}
+}
+
 %% Concurrency Control
 @article{CC:CSUR1981,
   author = {Bernstein, Philip A. and Goodman, Nathan},
@@ -345,4 +402,40 @@
   year        = "2017",
   type        = "Technical Report",
   month       = "June",
+}
+
+%% Testing
+@article{CLOTHO:OOPSLA2019,
+  author = {Rahmani, Kia and Nagar, Kartik and Delaware, Benjamin and Jagannathan, Suresh},
+  title = {CLOTHO: Directed Test Generation for Weakly Consistent Database Systems},
+  year = {2019},
+  issue_date = {October 2019},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {3},
+  number = {OOPSLA},
+  url = {https://doi.org/10.1145/3360543},
+  doi = {10.1145/3360543},
+  journal = {Proc. ACM Program. Lang.},
+  month = oct,
+  articleno = {117},
+  numpages = {28},
+}
+
+@article{ComplexityTx:OOPSLA2019,
+  author = {Biswas, Ranadeep and Enea, Constantin},
+  title = {On the Complexity of Checking Transactional Consistency},
+  year = {2019},
+  issue_date = {October 2019},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {3},
+  number = {OOPSLA},
+  url = {https://doi.org/10.1145/3360591},
+  doi = {10.1145/3360591},
+  abstract = {Transactions simplify concurrent programming by enabling computations on shared data that are isolated from other concurrent computations and are resilient to failures. Modern databases provide different consistency models for transactions corresponding to different tradeoffs between consistency and availability. In this work, we investigate the problem of checking whether a given execution of a transactional database adheres to some consistency model. We show that consistency models like read committed, read atomic, and causal consistency are polynomial-time checkable while prefix consistency and snapshot isolation are NP-complete in general. These results complement a previous NP-completeness result concerning serializability. Moreover, in the context of NP-complete consistency models, we devise algorithms that are polynomial time assuming that certain parameters in the input executions, e.g., the number of sessions, are fixed. We evaluate the scalability of these algorithms in the context of several production databases.},
+  journal = {Proc. ACM Program. Lang.},
+  month = oct,
+  articleno = {165},
+  numpages = {28},
 }

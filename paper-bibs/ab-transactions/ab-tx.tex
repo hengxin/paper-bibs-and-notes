@@ -43,6 +43,19 @@
   and proposes timestamp-based protocols for different degrees of isolation.
 }
 
+\bib{\bibentry{Adya:PhDThesis1999}}
+\note{\it
+  This thesis presents the first implementation-independent specifications 
+  of existing ANSI isolation levels and a number of levels 
+  that are widely used in commercial systems, e.g., Cursor Stability, Snapshot Isolation. 
+
+  We use a graph-based approach to define different isolation levels 
+  in a simple and intuitive manner.
+
+  The thesis describes new implementation techniques for 
+  supporting different weak consistency levels in distributed client-server environments. 
+}
+
 \bib{\bibentry{PushPull:PLDI2015}}
 \note{\it
   We present a general theory of serializability, 
@@ -53,6 +66,18 @@
   (or UNPUSH to recall effects) 
   and PULL the effects of potentially uncommitted concurrent transactions 
   into their local view (or UNPULL to detangle).
+}
+
+\bib{\bibentry{Gotsman:CONCUR2015}}
+\note{\it 
+  we propose a framework for specifying a variety of consistency models for transactions 
+  uniformly and declaratively. 
+  Our specifications are given in the style of weak memory models,
+  using structures of events and relations on them.
+  The specifications are particularly concise because 
+  they exploit the property of atomic visibility guaranteed by many consistency models:
+  either all or none of the updates by a transaction can be visible to another one.
+  This allows the specifications to abstract from individual events inside transactions.
 }
 
 \bib{\bibentry{Crooks:PODC2017}}
@@ -66,6 +91,14 @@
 }
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Serializability} \label{ss:sr}
+
+\bib{\bibentry{TIS:Book2001}}
+\note{\it 
+  The ``TIS'' book contains several variants of serializability:
+  Final State Serializability, View Serializability, Conflict Serializability,
+  Commit Serializability, Multiversion Serializability, Global Serializability,
+  Quasi Serializability
+}
 
 \bib{\bibentry{PL:CACM1976}}
 \note{\it 
@@ -141,6 +174,25 @@
   to prevent read-write conflicts in contrast to write-write conflicts 
   that are prevented by snapshot isolation.
 }
+
+\bib{\bibentry{GSI:SRDS2005}}
+\note{\it 
+  It defines GSI (Generalized Snapshot Isolation) 
+  and PSI (Perfix-Consistent Snapshot Isolation).
+
+  While (conventional) snapshot isolation requires that transactions 
+  observe the ``latest'' snapshot of the database, 
+  generalized snapshot isolation allows the use of ``older'' snapshots,
+  facilitating a replicated implementation.
+}
+
+\bib{\bibentry{ClockSI:SRDS2013}}
+\note{\it 
+  Clock-SI is a fully distributed protocol that implements snapshot isolation (SI) 
+  for partitioned data stores.
+  It derives snapshot and commit timestamps from loosely synchronized clocks,
+  rather than from a centralized timestamp authority as used in current systems.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theory} \label{section:theory}
 
@@ -202,6 +254,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systems} \label{section:systems}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Testing} \label{section:testing}
+
+\bib{\bibentry{CLOTHO:OOPSLA2019}}
+\note{\it 
+  This paper presents a novel testing framework for detecting serializability violations 
+  in (SQL) database-backed Java applications executing on weakly-consistent storage systems.
+  We manifest our approach in a tool, CLOTHO, that combines a static analyzer 
+  and model checker to generate abstract executions, 
+  discover serializability violations in these executions,
+  and translate them back into concrete test inputs suitable for deployment 
+  in a test environment.
+}
+
+\bib{\bibentry{ComplexityTx:OOPSLA2019}}
+\note{\it 
+  In this work, we investigate the problem of checking 
+  whether a given execution of a transactional database adheres to some consistency model. 
+  We show that consistency models like read committed, read atomic, and causal consistency 
+  are polynomial-time checkable while prefix consistency and snapshot isolation are NP-complete in general.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{../acm-sigchi} 
 \nobibliography{ab-tx}
