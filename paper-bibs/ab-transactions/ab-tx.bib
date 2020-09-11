@@ -22,6 +22,18 @@
 %% Specs
 
 %%% Frameworks
+@inbook{LocksAndConsistency:BookChapter1994,
+  author = {Gray, J. N. and Lorie, R. A. and Putzolu, G. R. and Traiger, I. L.},
+  title = {Granularity of Locks and Degrees of Consistency in a Shared Data Base},
+  year = {1994},
+  isbn = {1558602526},
+  publisher = {Morgan Kaufmann Publishers Inc.},
+  address = {San Francisco, CA, USA},
+  booktitle = {Readings in Database Systems (2nd Ed.)},
+  pages = {181–208},
+  numpages = {28}
+}
+
 @article{CritiqueIsolation:SIGMOD1995,
   author = {Berenson, Hal and Bernstein, Phil and Gray, Jim and Melton, Jim and O'Neil, Elizabeth and O'Neil, Patrick},
   title = {A Critique of ANSI SQL Isolation Levels},
@@ -60,6 +72,18 @@
   publisher = {Massachusetts Institute of Technology},
   address = {USA},
   note = {AAI0800775}
+}
+
+@inproceedings{GeneralizedIsolation:ICDE2000,
+  title = {Generalized Isolation Level Definitions},
+  year = {2000},
+  isbn = {0769505066},
+  publisher = {IEEE Computer Society},
+  address = {USA},
+  booktitle = {Proceedings of the 16th International Conference on Data Engineering},
+  pages = {67},
+  numpages = {1},
+  series = {ICDE '00}
 }
 
 @inproceedings{PushPull:PLDI2015,
@@ -120,7 +144,7 @@
 }
 
 %%% Serializability
-@article{PL:CACM1976,
+@article{ConsistencyAndLocking:CACM1976,
   author = {Eswaran, K. P. and Gray, J. N. and Lorie, R. A. and Traiger, I. L.},
   title = {The Notions of Consistency and Predicate Locks in a Database System},
   year = {1976},
@@ -241,6 +265,22 @@
   numpages = {23}
 }
 
+@inproceedings{MVSR:PODS1985,
+  author = {Hadzilacos, Thanasis and Papadimitriou, Christos H.},
+  title = {Algorithmic Aspects of Multiversion Concurrency Control},
+  year = {1985},
+  isbn = {0897911539},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/325405.325417},
+  doi = {10.1145/325405.325417},
+  booktitle = {Proceedings of the Fourth ACM SIGACT-SIGMOD Symposium on Principles of Database Systems},
+  pages = {96–104},
+  numpages = {9},
+  location = {Portland, Oregon, USA},
+  series = {PODS '85}
+}
+
 @techreport{CausalSR:Raynal1996,
   TITLE = {{From Serializable to Causal Transactions for Collaborative Applications}},
   AUTHOR = {Raynal, Michel and Thia-Kime, G. and Ahamad, M.},
@@ -301,7 +341,6 @@
   issn = {2150-8097},
   url = {https://doi.org/10.14778/2367502.2367523},
   doi = {10.14778/2367502.2367523},
-  abstract = {This paper describes our experience implementing PostgreSQL's new serializable isolation level. It is based on the recently-developed Serializable Snapshot Isolation (SSI) technique. This is the first implementation of SSI in a production database release as well as the first in a database that did not previously have a lock-based serializable isolation level. We reflect on our experience and describe how we overcame some of the resulting challenges, including the implementation of a new lock manager, a technique for ensuring memory usage is bounded, and integration with other PostgreSQL features. We also introduce an extension to SSI that improves performance for read-only transactions. We evaluate PostgreSQL's serializable isolation level using several benchmarks and show that it achieves performance only slightly below that of snapshot isolation, and significantly outperforms the traditional two-phase locking approach on read-intensive workloads.},
   journal = {Proc. VLDB Endow.},
   month = aug,
   pages = {1850–1861},
@@ -338,7 +377,61 @@
   series = {SRDS '13}
 }
 
+%%% Mixed Consistency Models
+@inproceedings{10.1145/3192366.3192375,
+author = {Milano, Matthew and Myers, Andrew C.},
+title = {MixT: A Language for Mixing Consistency in Geodistributed Transactions},
+year = {2018},
+isbn = {9781450356985},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3192366.3192375},
+doi = {10.1145/3192366.3192375},
+abstract = {Programming concurrent, distributed systems is hard—especially when these systems mutate shared, persistent state replicated at geographic scale. To enable high availability and scalability, a new class of weakly consistent data stores has become popular. However, some data needs strong consistency. To manipulate both weakly and strongly consistent data in a single transaction, we introduce a new abstraction: mixed-consistency transactions, embodied in a new embedded language, MixT. Programmers explicitly associate consistency models with remote storage sites; each atomic, isolated transaction can access a mixture of data with different consistency models. Compile-time information-flow checking, applied to consistency models, ensures that these models are mixed safely and enables the compiler to automatically partition transactions. New run-time mechanisms ensure that consistency models can also be mixed safely, even when the data used by a transaction resides on separate, mutually unaware stores. Performance measurements show that despite their stronger guarantees, mixed-consistency transactions retain much of the speed of weak consistency, significantly outperforming traditional serializable transactions.},
+booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+pages = {226–241},
+numpages = {16},
+keywords = {Information Flow, Transactions, Consistency},
+location = {Philadelphia, PA, USA},
+series = {PLDI 2018}
+}
+
+
+@article{MixT:PLDI2018,
+  author = {Milano, Matthew and Myers, Andrew C.},
+  title = {MixT: A Language for Mixing Consistency in Geodistributed Transactions},
+  year = {2018},
+  issue_date = {April 2018},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {53},
+  number = {4},
+  issn = {0362-1340},
+  url = {https://doi.org/10.1145/3296979.3192375},
+  doi = {10.1145/3296979.3192375},
+  journal = {SIGPLAN Not.},
+  month = jun,
+  pages = {226–241},
+  numpages = {16},
+}
+
 %% Concurrency Control
+@inproceedings{Optimality:SIGMOD1979,
+  author = {Kung, H. T. and Papadimitriou, C. H.},
+  title = {An Optimality Theory of Concurrency Control for Databases},
+  year = {1979},
+  isbn = {089791001X},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/582095.582114},
+  doi = {10.1145/582095.582114},
+  booktitle = {Proceedings of the 1979 ACM SIGMOD International Conference on Management of Data},
+  pages = {116–126},
+  numpages = {11},
+  location = {Boston, Massachusetts},
+  series = {SIGMOD '79}
+}
+
 @article{CC:CSUR1981,
   author = {Bernstein, Philip A. and Goodman, Nathan},
   title = {Concurrency Control in Distributed Database Systems},
@@ -358,6 +451,40 @@
 }
 
 %%% Locking
+@inproceedings{Locking:VLDB1975,
+  author = {Gray, J. N. and Lorie, R. A. and Putzolu, G. R.},
+  title = {Granularity of Locks in a Shared Data Base},
+  year = {1975},
+  isbn = {9781450339209},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/1282480.1282513},
+  doi = {10.1145/1282480.1282513},
+  booktitle = {Proceedings of the 1st International Conference on Very Large Data Bases},
+  pages = {428–451},
+  numpages = {24},
+  location = {Framingham, Massachusetts},
+  series = {VLDB '75}
+}
+
+@article{SafeLocking:JACM1982,
+  author = {Yannakakis, Mihalis},
+  title = {A Theory of Safe Locking Policies in Database Systems},
+  year = {1982},
+  issue_date = {July 1982},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {29},
+  number = {3},
+  issn = {0004-5411},
+  url = {https://doi.org/10.1145/322326.322333},
+  doi = {10.1145/322326.322333},
+  journal = {J. ACM},
+  month = jul,
+  pages = {718–740},
+  numpages = {23}
+}
+
 @article{Beyond2PL:JACM1985,
   author = {Buckley, G. N. and Silberschatz, A.},
   title = {Beyond Two-Phase Locking},
@@ -402,6 +529,23 @@
   year        = "2017",
   type        = "Technical Report",
   month       = "June",
+}
+
+@article{AloneTogether:POPL2018,
+  author = {Kaki, Gowtham and Nagar, Kartik and Najafzadeh, Mahsa and Jagannathan, Suresh},
+  title = {Alone Together: Compositional Reasoning and Inference for Weak Isolation},
+  year = {2017},
+  issue_date = {January 2018},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {2},
+  number = {POPL},
+  url = {https://doi.org/10.1145/3158115},
+  doi = {10.1145/3158115},
+  journal = {Proc. ACM Program. Lang.},
+  month = dec,
+  articleno = {27},
+  numpages = {34},
 }
 
 %% Testing

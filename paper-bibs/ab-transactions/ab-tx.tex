@@ -29,6 +29,20 @@
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Frameworks} \label{ss:framework}
 
+\bib{\bibentry{LocksAndConsistency:BookChapter1994}}
+\note{\it 
+  This paper defines four degrees of consistency,
+  attempting to show the equivalence of locking, dependency, and anomaly-based
+  characterizations.
+  The anomaly definitions were too vague.
+  The authors continue to get criticism for that aspect of the definitions.
+  Only the more mathematical definitions in terms of histories and dependency graphs
+  or locking have stood the test of time.
+
+  This is a book chapter version. Originally published in 1977.
+  See also~\cite{Locking:VLDB1975}.
+}
+
 \bib{\bibentry{CritiqueIsolation:SIGMOD1995}}
 \note{\it
   Defines Isolation Levels in terms of phenomena;
@@ -54,6 +68,17 @@
 
   The thesis describes new implementation techniques for 
   supporting different weak consistency levels in distributed client-server environments. 
+}
+
+\bib{\bibentry{GeneralizedIsolation:ICDE2000}}
+\note{\it
+  Our specifications are portable; 
+  they apply not only to locking implementations,
+  but also to optimistic and multi-version concurrency control schemes.
+  Furthermore, unlike earlier definitions, 
+  our new specifications handle predicates in a correct and flexible manner at all levels.
+
+  It also discusses ``Mixing of Isolation Levels''.
 }
 
 \bib{\bibentry{PushPull:PLDI2015}}
@@ -100,8 +125,17 @@
   Quasi Serializability
 }
 
-\bib{\bibentry{PL:CACM1976}}
+\bib{\bibentry{ConsistencyAndLocking:CACM1976}}
 \note{\it 
+  This paper defines the concepts of transaction, consistency and schedule 
+  and shows that consistency requires that a transaction 
+  cannot request new locks after releasing a lock.
+  Then it is argued that a transaction needs to lock a logical rather than 
+  a physical subset of the database.
+  These subsets may be specified by predicates.
+  An implementation of predicate locks 
+  which satisfies the consistency condition is suggested.
+
   This is the first paper to formalize mathematically the concurrency control problem.
   It also defines ``conflict serializability'', 
   which is termed DSR in~\cite{Papadimitriou:JACM1979}.
@@ -146,6 +180,13 @@
   Our transactions are partially ordered sets of actions, 
   as opposed to the straight-line programs of the centralized case.
   The concurrency control algorithm, or scheduler, is itself a distributed program.
+}
+
+\bib{\bibentry{MVSR:PODS1985}}
+\note{\it 
+  In this paper we introduce a new notion of multiversion serializability (MVSR) 
+  based on conflicts (MVCSR), and discuss its relation with the well known 
+  single version conflict serializability (CSR). 
 }
 
 \bib{\bibentry{SSI:VLDB2012}}
@@ -193,9 +234,18 @@
   It derives snapshot and commit timestamps from loosely synchronized clocks,
   rather than from a centralized timestamp authority as used in current systems.
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Theory} \label{section:theory}
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Mixed Transactional Consistency Models} \label{ss:mixed}
 
+\bib{\bibentry{MixT:PLDI2018}}
+\note{\it 
+  To manipulate both weakly and strongly consistent data in a single transaction, 
+  we introduce a new abstraction: mixed-consistency transactions, 
+  embodied in a new embedded language, MixT.
+  Programmers explicitly associate consistency models with remote storage sites;
+  each atomic, isolated transaction can access a mixture of data 
+  with different consistency models.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Robustness (and Dependency Graphs)} \label{section:robustness}
 
@@ -207,6 +257,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Concurrency Control Protocols} \label{section:cc}
 
+%%%%%%%%%%%%%%%%%%%%
+\subsection{Theory} \label{ss:theory}
+
+\bib{\bibentry{Optimality:SIGMOD1979}}
+\note{\it 
+  There is a growing body of literature on various solutions 
+  to the concurrency control problem. 
+  This paper gives a uniform framework for evaluating these solutions, 
+  and, in many cases, for establishing their optimality.
+  We point out a trade-off between the performance of a scheduler 
+  and the information that it uses.
+  We show that most of the existing work on concurrency control 
+  is concerned with specific points of this fundamental trade-off.
+  For example, our framework allows us to formally show that 
+  the popular approach of Serialization is the best one can hope for 
+  when only syntactic information is available.
+}
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview} \label{ss:cc-overview}
 
@@ -227,6 +294,32 @@
 }
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Locking} \label{ss:locking}
+
+\bib{\bibentry{Locking:VLDB1975}}
+\note{\it 
+  This paper proposes a locking protocol which associates locks with sets of resources.
+  This protocol allows simultaneous locking at various granularities 
+  by different transactions.
+  It is based on the introduction of additional lock modes 
+  besides the conventional share mode and exclusive mode.
+  The protocol is generalized from simple hierarchies of locks 
+  to directed acyclic graphs of locks and to dynamic graphs of locks.
+  The issues of scheduling and granting conflicting requests for the same resource 
+  are then discussed. 
+  Lastly, these ideas are compared with the lock mechanisms 
+  provided by existing data management systems.
+
+  It introduces intention locks.
+}
+
+\bib{\bibentry{SafeLocking:JACM1982}}
+\note{\it 
+  Necessary and sufficient conditions are found for a locking policy to be safe,
+  but it is shown that in general it is NP-complete to test for these conditions.
+  However, when the database has a given structure, 
+  a simple set of rules which is sufficient for safety and, moreover, 
+  necessary for a wide class of natural locking policies is developed.
+}
 
 \bib{\bibentry{Beyond2PL:JACM1985}}
 \note{\it
@@ -250,6 +343,17 @@
 
    We show this by providing the first application of our logic 
    in terms of the Two-phase locking (2pl) protocol which ensures serializability.
+}
+
+\bib{\bibentry{AloneTogether:POPL2018}}
+\note{\it 
+  Unfortunately, the semantics of weak isolation is poorly understood, 
+  and usually explained only informally in terms of low-level implementation artifacts.
+  Consequently, verifying high-level correctness properties in such environments 
+  remains a challenging problem. 
+  To address this issue, we present a novel program logic 
+  that enables compositional reasoning about the behavior of 
+  concurrently executing weakly-isolated transactions.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systems} \label{section:systems}
