@@ -378,26 +378,39 @@
 }
 
 %%% Mixed Consistency Models
-@inproceedings{10.1145/3192366.3192375,
-author = {Milano, Matthew and Myers, Andrew C.},
-title = {MixT: A Language for Mixing Consistency in Geodistributed Transactions},
-year = {2018},
-isbn = {9781450356985},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3192366.3192375},
-doi = {10.1145/3192366.3192375},
-abstract = {Programming concurrent, distributed systems is hard—especially when these systems mutate shared, persistent state replicated at geographic scale. To enable high availability and scalability, a new class of weakly consistent data stores has become popular. However, some data needs strong consistency. To manipulate both weakly and strongly consistent data in a single transaction, we introduce a new abstraction: mixed-consistency transactions, embodied in a new embedded language, MixT. Programmers explicitly associate consistency models with remote storage sites; each atomic, isolated transaction can access a mixture of data with different consistency models. Compile-time information-flow checking, applied to consistency models, ensures that these models are mixed safely and enables the compiler to automatically partition transactions. New run-time mechanisms ensure that consistency models can also be mixed safely, even when the data used by a transaction resides on separate, mutually unaware stores. Performance measurements show that despite their stronger guarantees, mixed-consistency transactions retain much of the speed of weak consistency, significantly outperforming traditional serializable transactions.},
-booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation},
-pages = {226–241},
-numpages = {16},
-keywords = {Information Flow, Transactions, Consistency},
-location = {Philadelphia, PA, USA},
-series = {PLDI 2018}
+@inproceedings{AllocatingIsolation:PODS2015,
+  author = {Fekete, Alan},
+  title = {Allocating Isolation Levels to Transactions},
+  year = {2005},
+  isbn = {1595930620},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/1065167.1065193},
+  doi = {10.1145/1065167.1065193},
+  booktitle = {Proceedings of the Twenty-Fourth ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems},
+  pages = {206–215},
+  numpages = {10},
+  location = {Baltimore, Maryland},
+  series = {PODS '05}
 }
 
+@inproceedings{MixT:PLDI2018,
+  author = {Milano, Matthew and Myers, Andrew C.},
+  title = {MixT: A Language for Mixing Consistency in Geodistributed Transactions},
+  year = {2018},
+  isbn = {9781450356985},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3192366.3192375},
+  doi = {10.1145/3192366.3192375},
+  booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+  pages = {226–241},
+  numpages = {16},
+  location = {Philadelphia, PA, USA},
+  series = {PLDI 2018}
+}
 
-@article{MixT:PLDI2018,
+@article{MixT:SIGPLAN2018,
   author = {Milano, Matthew and Myers, Andrew C.},
   title = {MixT: A Language for Mixing Consistency in Geodistributed Transactions},
   year = {2018},
@@ -413,6 +426,13 @@ series = {PLDI 2018}
   month = jun,
   pages = {226–241},
   numpages = {16},
+}
+
+@mastersthesis{fastPSI:MasterThesis2020,
+  title = {A Fast Implementation of Parallel Snapshot Isolation},
+  author = {Borja Arnau de R{\'{e}}gil Bas{\'{a}}{\~{n}}ez},
+  year = {2020},
+  school = {Universidad Complutense de Madrid},
 }
 
 %% Concurrency Control

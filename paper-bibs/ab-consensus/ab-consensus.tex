@@ -18,6 +18,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Framework} \label{section:framework}
 
+\bib{\bibentry{PaxosVRZab:TDSC2015}}
+\note{\it 
+  Paxos, Viewstamped Replication, and Zab are replication protocols 
+  for high-availability in asynchronous environments with crash failures.
+  Claims have been made about their similarities and differences.
+  But how does one determine whether two protocols are the same, 
+  and if not, how significant are the differences? 
+  We address these questions using refinement mappings.
+}
+
+\bib{\bibentry{Parallel:PODC2019}}
+\note{\it
+  In this paper, we present a formal mapping between Raft and Paxos, 
+  and use this knowledge to port a certain class of optimizations from Paxos to Raft.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Paxos and Variants} \label{section:paxos}
 
@@ -29,7 +44,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{../acm-sigchi} 
-\nobibliography{ab-tx}
+\nobibliography{ab-consensus}
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

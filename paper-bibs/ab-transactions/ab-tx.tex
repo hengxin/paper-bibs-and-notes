@@ -237,6 +237,18 @@
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Mixed Transactional Consistency Models} \label{ss:mixed}
 
+\bib{\bibentry{AllocatingIsolation:PODS2015}}
+\note{\it 
+  In this paper, we discuss the problem of taking a collection of transactions, 
+  and allocating each to run at an appropriate isolation level 
+  (and thus use a particular concurrency control mechanism), 
+  while still ensuring that every execution will be conflict serializable. 
+  When each transaction can use either S2PL, or snapshot isolation, 
+  we characterize exactly the acceptable allocations, 
+  and provide a simple graph-based algorithm 
+  which determines the weakest acceptable allocation.
+}
+
 \bib{\bibentry{MixT:PLDI2018}}
 \note{\it 
   To manipulate both weakly and strongly consistent data in a single transaction, 
@@ -245,6 +257,16 @@
   Programmers explicitly associate consistency models with remote storage sites;
   each atomic, isolated transaction can access a mixture of data 
   with different consistency models.
+}
+
+\bib{\bibentry{fastPSI:MasterThesis2020}}
+\note{\it 
+  This work shows an approach to bridge the gap between PSI, NMSI 
+  and strong consistency models like serialisability. 
+  It introduces and implements fastPSI, 
+  a consistency protocol that allows the user to selectively enforce serialisability 
+  for certain executions, 
+  while retaining the scalability properties of weaker consistency models like PSI and NMSI.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Robustness (and Dependency Graphs)} \label{section:robustness}
