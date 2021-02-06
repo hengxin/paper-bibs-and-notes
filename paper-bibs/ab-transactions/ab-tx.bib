@@ -296,20 +296,20 @@
 }
 
 %%% Snapshot Isolation
-@inproceedings{CritiqueSI:EuroSys2012,
-  author = {Yabandeh, Maysam and G\'{o}mez Ferro, Daniel},
-  title = {A Critique of Snapshot Isolation},
-  year = {2012},
-  isbn = {9781450312233},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  url = {https://doi.org/10.1145/2168836.2168853},
-  doi = {10.1145/2168836.2168853},
-  booktitle = {Proceedings of the 7th ACM European Conference on Computer Systems},
-  pages = {155–168},
-  numpages = {14},
-  location = {Bern, Switzerland},
-  series = {EuroSys '12}
+
+@inproceedings{GSI:SRDS2005,
+  author = {Elnikety, Sameh and Zwaenepoel, Willy and Pedone, Fernando},
+  title = {Database Replication Using Generalized Snapshot Isolation},
+  year = {2005},
+  isbn = {076952463X},
+  publisher = {IEEE Computer Society},
+  address = {USA},
+  url = {https://doi.org/10.1109/RELDIS.2005.14},
+  doi = {10.1109/RELDIS.2005.14},
+  booktitle = {Proceedings of the 24th IEEE Symposium on Reliable Distributed Systems},
+  pages = {73–84},
+  numpages = {12},
+  series = {SRDS '05}
 }
 
 @article{Fekete:TODS2005,
@@ -330,6 +330,22 @@
   numpages = {37},
 }
 
+@inproceedings{CritiqueSI:EuroSys2012,
+  author = {Yabandeh, Maysam and G\'{o}mez Ferro, Daniel},
+  title = {A Critique of Snapshot Isolation},
+  year = {2012},
+  isbn = {9781450312233},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2168836.2168853},
+  doi = {10.1145/2168836.2168853},
+  booktitle = {Proceedings of the 7th ACM European Conference on Computer Systems},
+  pages = {155–168},
+  numpages = {14},
+  location = {Bern, Switzerland},
+  series = {EuroSys '12}
+}
+
 @article{SSI:VLDB2012,
   author = {Ports, Dan R. K. and Grittner, Kevin},
   title = {Serializable Snapshot Isolation in PostgreSQL},
@@ -347,21 +363,6 @@
   numpages = {12}
 }
 
-@inproceedings{GSI:SRDS2005,
-  author = {Elnikety, Sameh and Zwaenepoel, Willy and Pedone, Fernando},
-  title = {Database Replication Using Generalized Snapshot Isolation},
-  year = {2005},
-  isbn = {076952463X},
-  publisher = {IEEE Computer Society},
-  address = {USA},
-  url = {https://doi.org/10.1109/RELDIS.2005.14},
-  doi = {10.1109/RELDIS.2005.14},
-  booktitle = {Proceedings of the 24th IEEE Symposium on Reliable Distributed Systems},
-  pages = {73–84},
-  numpages = {12},
-  series = {SRDS '05}
-}
-
 @inproceedings{ClockSI:SRDS2013,
   author = {Du, Jiaqing and Elnikety, Sameh and Zwaenepoel, Willy},
   title = {Clock-SI: Snapshot Isolation for Partitioned Data Stores Using Loosely Synchronized Clocks},
@@ -375,6 +376,42 @@
   pages = {173–184},
   numpages = {12},
   series = {SRDS '13}
+}
+
+@article{DSI:VLDB2014,
+  author = {Binnig, Carsten and Hildenbrand, Stefan and F\"{a}rber, Franz and Kossmann, Donald and Lee, Juchang and May, Norman},
+  title = {Distributed Snapshot Isolation: Global Transactions Pay Globally, Local Transactions Pay Locally},
+  year = {2014},
+  issue_date = {December 2014},
+  publisher = {Springer-Verlag},
+  address = {Berlin, Heidelberg},
+  volume = {23},
+  number = {6},
+  issn = {1066-8888},
+  url = {https://doi.org/10.1007/s00778-014-0359-9},
+  doi = {10.1007/s00778-014-0359-9},
+  journal = {The VLDB Journal},
+  month = dec,
+  pages = {987–1011},
+  numpages = {25},
+}
+
+@article{AnalysingSI:JACM2018,
+  author = {Cerone, Andrea and Gotsman, Alexey},
+  title = {Analysing Snapshot Isolation},
+  year = {2018},
+  issue_date = {March 2018},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {65},
+  number = {2},
+  issn = {0004-5411},
+  url = {https://doi.org/10.1145/3152396},
+  doi = {10.1145/3152396},
+  journal = {J. ACM},
+  month = jan,
+  articleno = {11},
+  numpages = {41},
 }
 
 %%% Mixed Consistency Models
@@ -541,6 +578,111 @@
   numpages = {50},
 }
 
+% atomic commitment and consensus
+@article{Paxos:VLDB2011,
+  author = {Rao, Jun and Shekita, Eugene J. and Tata, Sandeep},
+  title = {Using Paxos to Build a Scalable, Consistent, and Highly Available Datastore},
+  year = {2011},
+  issue_date = {January 2011},
+  publisher = {VLDB Endowment},
+  volume = {4},
+  number = {4},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/1938545.1938549},
+  doi = {10.14778/1938545.1938549},
+  journal = {Proc. VLDB Endow.},
+  month = jan,
+  pages = {243–254},
+  numpages = {12}
+}
+
+@article{ReplicatedCommit:VLDB2013,
+  author = {Mahmoud, Hatem and Nawab, Faisal and Pucher, Alexander and Agrawal, Divyakant and El Abbadi, Amr},
+  title = {Low-Latency Multi-Datacenter Databases Using Replicated Commit},
+  year = {2013},
+  issue_date = {July 2013},
+  publisher = {VLDB Endowment},
+  volume = {6},
+  number = {9},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/2536360.2536366},
+  doi = {10.14778/2536360.2536366},
+  journal = {Proc. VLDB Endow.},
+  month = jul,
+  pages = {661–672},
+  numpages = {12}
+}
+
+@InProceedings{TCS:DISC2018,
+  author =	{Gregory Chockler and Alexey Gotsman},
+  title =	{{Multi-Shot Distributed Transaction Commit}},
+  booktitle =	{32nd International Symposium on Distributed Computing  (DISC 2018)},
+  pages =	{14:1--14:18},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-95977-092-7},
+  ISSN =	{1868-8969},
+  year =	{2018},
+  volume =	{121},
+  editor =	{Ulrich Schmid and Josef Widder},
+  publisher =	{Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{http://drops.dagstuhl.de/opus/volltexte/2018/9803},
+  URN =		{urn:nbn:de:0030-drops-98038},
+  doi =		{10.4230/LIPIcs.DISC.2018.14},
+}
+
+@article{Unifying:VLDB2019,
+  author = {Maiyya, Sujaya and Nawab, Faisal and Agrawal, Divyakant and Abbadi, Amr El},
+  title = {Unifying Consensus and Atomic Commitment for Effective Cloud Data Management},
+  year = {2019},
+  issue_date = {January 2019},
+  publisher = {VLDB Endowment},
+  volume = {12},
+  number = {5},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3303753.3303765},
+  doi = {10.14778/3303753.3303765},
+  journal = {Proc. VLDB Endow.},
+  month = jan,
+  pages = {611–623},
+  numpages = {13}
+}
+
+% implementation
+@article{CCOptimality:VLDB2018,
+  author = {Didona, Diego and Guerraoui, Rachid and Wang, Jingjing and Zwaenepoel, Willy},
+  title = {Causal Consistency and Latency Optimality: Friend or Foe?},
+  year = {2018},
+  issue_date = {July 2018},
+  publisher = {VLDB Endowment},
+  volume = {11},
+  number = {11},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3236187.3236210},
+  doi = {10.14778/3236187.3236210},
+  journal = {Proc. VLDB Endow.},
+  month = jul,
+  pages = {1618–1632},
+  numpages = {15}
+}
+
+@inproceedings{TCC:SIGMOD2020,
+  author = {Wu, Chenggang and Sreekanti, Vikram and Hellerstein, Joseph M.},
+  title = {Transactional Causal Consistency for Serverless Computing},
+  year = {2020},
+  isbn = {9781450367356},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3318464.3389710},
+  doi = {10.1145/3318464.3389710},
+  abstract = {We consider the setting of serverless Function-as-a-Service (FaaS) platforms, where storage services are disaggregated from the machines that support function execution. FaaS applications consist of compositions of functions, each of which may run on a separate machine and access remote storage. The challenge we address is improving I/O latency in this setting while also providing application-wide consistency. Previous work has explored providing causal consistency for individual I/Os by carefully managing the versions stored in a client-side data cache. In our setting, a single application may execute multiple functions across different nodes, and therefore issue interrelated I/Os to multiple distinct caches. This raises the challenge of Multisite Transactional Causal Consistency (MTCC): the ability to provide causal consistency for all I/Os within a given transaction even if it runs across multiple physical sites. We present protocols for MTCC implemented in a system called HYDROCACHE. Our evaluation demonstrates orders-of-magnitude performance improvements due to caching, while also protecting against consistency anomalies that otherwise arise frequently.},
+  booktitle = {Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data},
+  pages = {83–97},
+  numpages = {15},
+  location = {Portland, OR, USA},
+  series = {SIGMOD '20}
+}
+
 %% Formal Methods
 @techreport{ProgramLogic2PL:TR2017,
   author      = "David Harver Pollak",
@@ -597,9 +739,27 @@
   number = {OOPSLA},
   url = {https://doi.org/10.1145/3360591},
   doi = {10.1145/3360591},
-  abstract = {Transactions simplify concurrent programming by enabling computations on shared data that are isolated from other concurrent computations and are resilient to failures. Modern databases provide different consistency models for transactions corresponding to different tradeoffs between consistency and availability. In this work, we investigate the problem of checking whether a given execution of a transactional database adheres to some consistency model. We show that consistency models like read committed, read atomic, and causal consistency are polynomial-time checkable while prefix consistency and snapshot isolation are NP-complete in general. These results complement a previous NP-completeness result concerning serializability. Moreover, in the context of NP-complete consistency models, we devise algorithms that are polynomial time assuming that certain parameters in the input executions, e.g., the number of sessions, are fixed. We evaluate the scalability of these algorithms in the context of several production databases.},
   journal = {Proc. ACM Program. Lang.},
   month = oct,
   articleno = {165},
   numpages = {28},
+}
+
+% robustness
+@InProceedings{RobustTCC:CONCUR2019,
+  author =	{Sidi Mohamed Beillahi and Ahmed Bouajjani and Constantin Enea},
+  title =	{{Robustness Against Transactional Causal Consistency}},
+  booktitle =	{30th International Conference on Concurrency Theory (CONCUR 2019)},
+  pages =	{30:1--30:18},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-95977-121-4},
+  ISSN =	{1868-8969},
+  year =	{2019},
+  volume =	{140},
+  editor =	{Wan Fokkink and Rob van Glabbeek},
+  publisher =	{Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{http://drops.dagstuhl.de/opus/volltexte/2019/10932},
+  URN =		{urn:nbn:de:0030-drops-109321},
+  doi =		{10.4230/LIPIcs.CONCUR.2019.30},
 }
