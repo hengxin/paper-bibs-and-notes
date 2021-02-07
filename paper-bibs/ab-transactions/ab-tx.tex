@@ -334,6 +334,11 @@
   the popular approach of Serialization is the best one can hope for
   when only syntactic information is available.
 }
+
+\bib{\bibentry{Interval:VLDB1984}}
+\note{\it
+  Certification by Intervals of Timestamps in Distributed Database Systems.
+}
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview} \label{ss:cc-overview}
 
@@ -396,6 +401,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Atomic Commitment and Consensus} \label{ss:ac-consensus}
 
+\bib{\bibentry{KnowledgeAC:PODS1987}}
+\note{\it
+  A knowledge-theoretic analysis of atomic commitment protocols.
+}
+
 \bib{\bibentry{Paxos:VLDB2011}}
 \note{\it
   Spinnaker is an experimental datastore
@@ -405,6 +415,26 @@
   and a transactional get-put API
   with the option to choose either strong or timeline consistency on reads.
   This paper describes Spinnaker’s Paxos-based replication protocol.
+}
+
+\bib{\bibentry{Megastore:CIDR2011}}
+\note{\it
+  Megastore is a storage system developed to
+  meet the requirements of today’s interactive online services.
+  Megastore blends the scalability of a NoSQL datastore
+  with the convenience of a traditional RDBMS in a novel way,
+  and provides both strong consistency guarantees and high availability.
+  We provide fully serializable ACID semantics within
+  fine-grained partitions of data.
+  This partitioning allows us to synchronously
+  replicate each write across a wide area network
+  with reasonable latency and support seamless failover between datacenters.
+  This paper describes Megastore’s semantics and replication algorithm.
+
+  While many systems use Paxos solely for
+  locking, master election, or replication of metadata and configurations,
+  we believe that Megastore is the largest system deployed
+  that uses Paxos to replicate primary user data across datacenters on every write.
 }
 
 \bib{\bibentry{ReplicatedCommit:VLDB2013}}
@@ -424,6 +454,24 @@
   as to whether the transaction should commit.
 }
 
+\bib{\bibentry{MDCC:EuroSys2013}}
+\note{\it
+  MDCC (Multi-Data Center Consistency)
+  is an optimistic commit protocol for geo-replicated transactions,
+  that does not require a master or static partitioning,
+  and is strongly consistent at a cost similar to
+  eventually consistent protocols.
+  MDCC takes advantage of Generalized Paxos for transaction processing
+  and exploits commutative updates with value constraints
+  in a quorum-based system.
+  Our experiments show that MDCC outperforms existing synchronous
+  transactional replication protocols, such as Megastore,
+  by requiring only a single message round-trip
+  in the normal operational case independent of the master-location
+  and by scaling linearly with the number of machines
+  as long as transaction conflict rates permit.
+}
+
 \bib{\bibentry{TCS:DISC2018}}
 \note{\it
   We introduce Transaction Certification Service (TCS),
@@ -437,7 +485,47 @@
   for implementing TCS through successive refinement.
 }
 
-\bib{\bibentry{Unifying:VLDB2019}
+\bib{\bibentry{TAPIR:TOCS2018}}
+\note{\it
+  We present the Transactional Application Protocol
+  for Inconsistent Replication (TAPIR),
+  the first transaction protocol to use a novel replication protocol,
+  called inconsistent replication,
+  that provides fault tolerance without consistency.
+  By enforcing strong consistency only in the transaction protocol,
+  TAPIR can commit transactions in a single round-trip
+  and order distributed transactions without centralized coordination.
+
+  This article demonstrates that it is possible
+  to build distributed transactions with better performance
+  and strong consistency semantics
+  by building on a replication protocol with no consistency.
+  We present inconsistent replication,
+  a new replication protocol that provides fault tolerance
+  without consistency, and TAPIR,
+  a new distributed transaction protocol
+  that provides linearizable transactions using IR.
+
+  (Fast path vs. Slow path)
+}
+
+\bib{\bibentry{VisibilityControl:VLDB2019}}
+\note{\it
+  We introduce Ocean Vista – a novel distributed protocol
+  that guarantees strict serializability.
+  We observe that concurrency control and replication
+  address different aspects of resolving the visibility of transactions,
+  and we address both concerns using a multi-version protocol
+  that tracks visibility using version watermarks
+  and arrives at correct visibility decisions using efficient gossip.
+  Gossiping the watermarks enables asynchronous transaction processing
+  and acknowledging transaction visibility in batches
+  in the concurrency control and replication protocols,
+  which improves efficiency under high cross-datacenter network delays.
+}
+
+\bib{\bibentry{Unifying:VLDB2019}}
+\note{\it
   Data storage in the Cloud needs to be scalable and fault-tolerant.
   Atomic commitment protocols such as Two Phase Commit (2PC)
   provide ACID guarantees for transactional access
@@ -455,12 +543,109 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Implementations} \label{ss:impl}
 
+\bib{\bibentry{RSSI:VLDB2011}}
+\note{\it
+  We propose a new algorithm Replicated Serializable Snapshot Isolation (RSSI)
+  that uses SI at each site, and combines this with a certification algorithm
+  to guarantee 1-copy serializable global execution.
+  Management of ww-conflicts is similar to what is done in 1-copy SI.
+  But unlike previous designs for 1-copy serializable systems,
+  we do not need to prevent all rw-conflicts among concurrent transactions.
+  We formalize this in a theorem
+  that shows that many rw-conflicts are indeed false positives
+  that do not risk non-serializable behavior.
+  Our proposed RSSI algorithm will only abort a transaction
+  when it detects a well-defined pattern of two consecutive rw-edges
+  in the serialization graph.
+}
+
+\bib{\bibentry{MaaT:VLDB2014}}
+\note{\it
+  Very little theoretical work has been done to
+  entirely eliminate the need for locking in distributed transactions,
+  including locks acquired during two-phase commit.
+  In this paper, we re-design optimistic concurrency control to
+  eliminate any need for locking even for atomic commitment,
+  while handling the practical issues in earlier theoretical work
+  related to this problem.
+}
+
+\bib{\bibentry{ConfluxDB:VLDB2014}}
+\note{\it
+  We propose a set of techniques that support update transaction execution
+  over multiple partitioned sites,
+  thereby allowing the master to scale.
+  Our techniques determine a total SI order for update transactions
+  over multiple master sites without requiring global coordination
+  in the distributed system,
+  and ensure that updates are installed in this order at all sites
+  to provide consistent and scalable replication with SI.
+}
+
 \bib{\bibentry{CCOptimality:VLDB2018}}
 \note{\it
   In this paper, we show that such ``latency-optimal'' ROTs
   induce an extra overhead on writes that is so high that
   it actually jeopardizes performance even in read-dominated workloads.
   We show this result from a practical as well as from a theoretical angle.
+}
+
+\bib{\bibentry{2PL+2PC:VLDB2019}}
+\note{\it
+  The goal of this paper is to establish a baseline for
+  concurrency control mechanisms on thousands of cores
+  connected through a low-latency network.
+  We develop a distributed lock table
+  supporting all the standard locking modes used in database engines.
+  We focus on strong consistency in the form of strict serializability
+  implemented through strict 2PL,
+  but also explore read-committed and repeatable-read,
+  two common isolation levels used in many systems.
+
+  The surprising result is that, for TPC-C, 2PL and 2PC
+  can be made to scale to thousands of cores and hundreds of machines,
+  reaching a throughput of over 21 million transactions per second
+  with 9.5 million New Order operations per second.
+
+  To achieve these results, our implementation
+  relies on Remote Direct Memory Access (RDMA).
+}
+
+\bib{\bibentry{SLOG:VLDB2019}}
+\note{\it
+  In this paper we discuss SLOG:
+  a system that avoids this tradeoff for workloads
+  which contain physical region locality in data access.
+  SLOG achieves high-throughput, strictly serializable ACID transactions
+  at geo-replicated distance
+  and scale for all transactions submitted across the world,
+  all the while achieving low latency for transactions
+  that initiate from a location close to the home region for data they access.
+}
+
+\bib{\bibentry{Creek:arXiv2019}}
+\note{\it
+  In this paper we introduce Creek, a low-latency,
+  eventually consistent replication scheme
+  that also enables execution of strongly consistent operations
+  (akin to ACID transactions).
+
+  Creek totally-orders all operations,
+  but does so using two different broadcast mechanisms:
+  a timestamp-based one and our novel conditional atomic broadcast (CAB).
+  The former is used to establish a tentative order
+  of all operations for speculative execution,
+  and it can tolerate network partitions.
+  On the other hand, CAB is only used to ensure linearizable execution of
+  the strongly consistent operations,
+  whenever distributed consensus can be solved.
+  The execution of strongly consistent operations
+  also stabilizes the execution order of the causally
+  related weakly consistent operations.
+  Creek uses multiversion concurrency control
+  to efficiently handle operations’ rollbacks
+  and reexecutions resulting from the mismatch
+  between the tentative and the final execution orders.
 }
 
 \bib{\bibentry{TCC:SIGMOD2020}}
@@ -480,8 +665,8 @@
   We present a program logic for serializable transactions
   that are able to manipulate a shared storage.
 
-   We show this by providing the first application of our logic
-   in terms of the Two-phase locking (2pl) protocol which ensures serializability.
+  We show this by providing the first application of our logic
+  in terms of the Two-phase locking (2pl) protocol which ensures serializability.
 }
 
 \bib{\bibentry{AloneTogether:POPL2018}}
@@ -494,9 +679,84 @@
   that enables compositional reasoning about the behavior of
   concurrently executing weakly-isolated transactions.
 }
+
+\bib{\bibentry{MixT:PLDI2018}}
+\note{\it
+  To manipulate both weakly and strongly consistent data
+  in a single transaction, we introduce a new abstraction:
+  mixed-consistency transactions,
+  embodied in a new embedded language, MixT.
+}
+
+\bib{\bibentry{CoordAvoidance:VLDB2018}}
+\note{\it
+  In this paper, we establish conditions under which
+  a commonly used sufficient condition for invariant confluence
+  is both necessary and sufficient,
+  and we use this condition to design
+  (a) a general-purpose interactive invariant confluence decision procedure
+  and (b) a novel sufficient condition that can be checked automatically.
+  We then take a step beyond invariant confluence
+  and introduce a generalization of invariant confluence,
+  called segmented invariant confluence,
+  that allows us to replicate non-invariant confluent objects
+  with a small amount of coordination.
+}
+
+\bib{\bibentry{IPA:VLDB2018}}
+\note{\it
+  In this paper we propose a novel approach
+  to preserve application invariants
+  without coordinating the execution of operations.
+  The approach consists of modifying operations
+  in a way that application invariants are maintained
+  in the presence of concurrent updates.
+  When no conflicting updates occur,
+  the modified operations present their original semantics.
+  Otherwise, we use sensible and deterministic conflict resolution policies
+  that preserve the invariants of the application.
+  To implement this approach, we developed a static analysis, IPA,
+  that identifies conflicting operations
+  and proposes the necessary modifications to operations.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systems} \label{section:systems}
 
+\bib{\bibentry{Azure:SOSP2011}}
+\note{\it
+  Windows Azure Storage (WAS) is a cloud storage system that
+  provides customers the ability to store
+  seemingly limitless amounts of data for any duration of time.
+  WAS customers have access to their data from anywhere at any time
+  and only pay for what they use and store.
+  In WAS, data is stored durably using both local and geographic replication
+  to facilitate disaster recovery.
+  Currently, WAS storage comes in the form of Blobs (files),
+  Tables (structured storage), and Queues (message delivery).
+  In this paper, we describe the WAS architecture, global namespace,
+  and data model, as well as its resource provisioning,
+  load balancing, and replication systems.
+}
+
+\subsection{New Hardwares} \label{ss:hardware}
+
+\bib{\bibentry{AvailabilityRDMA:VLDB2019}}
+\note{\it
+  In this paper, we first make the case that
+  in modern RDMA-enabled networks,
+  the bottleneck has shifted to CPUs,
+  and therefore the existing network-optimized replication techniques
+  are no longer optimal.
+
+  We present Active-Memory Replication,
+  a new high availability scheme that efficiently leverages RDMA
+  to completely eliminate the processing redundancy in replication.
+  Using Active-Memory, all replicas dedicate their processing power
+  to executing new transactions,
+  as opposed to performing redundant computation.
+  Active-Memory maintains high availability and correctness
+  in the presence of failures through an efficient RDMA-based undo-logging scheme.
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Testing} \label{section:testing}
 

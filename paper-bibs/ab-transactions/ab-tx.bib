@@ -431,22 +431,6 @@
   series = {PODS '05}
 }
 
-@inproceedings{MixT:PLDI2018,
-  author = {Milano, Matthew and Myers, Andrew C.},
-  title = {MixT: A Language for Mixing Consistency in Geodistributed Transactions},
-  year = {2018},
-  isbn = {9781450356985},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  url = {https://doi.org/10.1145/3192366.3192375},
-  doi = {10.1145/3192366.3192375},
-  booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation},
-  pages = {226–241},
-  numpages = {16},
-  location = {Philadelphia, PA, USA},
-  series = {PLDI 2018}
-}
-
 @article{MixT:SIGPLAN2018,
   author = {Milano, Matthew and Myers, Andrew C.},
   title = {MixT: A Language for Mixing Consistency in Geodistributed Transactions},
@@ -487,6 +471,19 @@
   numpages = {11},
   location = {Boston, Massachusetts},
   series = {SIGMOD '79}
+}
+
+@inproceedings{Interval:VLDB1984,
+  author = {Boksenbaum, Claude and Cart, Mich\`{e}le and Ferri\'{e}, Jean and Pons, Jean-Fran\c{c}ois},
+  title = {Certification by Intervals of Timestamps in Distributed Database Systems},
+  year = {1984},
+  isbn = {0934613168},
+  publisher = {Morgan Kaufmann Publishers Inc.},
+  address = {San Francisco, CA, USA},
+  booktitle = {Proceedings of the 10th International Conference on Very Large Data Bases},
+  pages = {377–387},
+  numpages = {11},
+  series = {VLDB '84}
 }
 
 @article{CC:CSUR1981,
@@ -579,6 +576,22 @@
 }
 
 % atomic commitment and consensus
+@inproceedings{KnowledgeAC:PODS1987,
+  author = {Hadzilacos, V.},
+  title = {A Knowledge-Theoretic Analysis of Atomic Commitment Protocols},
+  year = {1987},
+  isbn = {0897912233},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/28659.28672},
+  doi = {10.1145/28659.28672},
+  booktitle = {Proceedings of the Sixth ACM SIGACT-SIGMOD-SIGART Symposium on Principles of Database Systems},
+  pages = {129–134},
+  numpages = {6},
+  location = {San Diego, California, USA},
+  series = {PODS '87}
+}
+
 @article{Paxos:VLDB2011,
   author = {Rao, Jun and Shekita, Eugene J. and Tata, Sandeep},
   title = {Using Paxos to Build a Scalable, Consistent, and Highly Available Datastore},
@@ -596,6 +609,13 @@
   numpages = {12}
 }
 
+@article{Megastore:CIDR2011,
+  title={Megastore: Providing scalable, highly available storage for interactive services},
+  author={Baker, Jason and Bond, Chris and Corbett, James C and Furman, JJ and Khorlin, Andrey and Larson, James and Leon, Jean-Michel and Li, Yawei and Lloyd, Alexander and Yushprakh, Vadim},
+  booktitle = {(CIDR)},
+  year={2011}
+}
+
 @article{ReplicatedCommit:VLDB2013,
   author = {Mahmoud, Hatem and Nawab, Faisal and Pucher, Alexander and Agrawal, Divyakant and El Abbadi, Amr},
   title = {Low-Latency Multi-Datacenter Databases Using Replicated Commit},
@@ -611,6 +631,22 @@
   month = jul,
   pages = {661–672},
   numpages = {12}
+}
+
+@inproceedings{MDCC:EuroSys2013,
+  author = {Kraska, Tim and Pang, Gene and Franklin, Michael J. and Madden, Samuel and Fekete, Alan},
+  title = {MDCC: Multi-Data Center Consistency},
+  year = {2013},
+  isbn = {9781450319942},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2465351.2465363},
+  doi = {10.1145/2465351.2465363},
+  booktitle = {Proceedings of the 8th ACM European Conference on Computer Systems},
+  pages = {113–126},
+  numpages = {14},
+  location = {Prague, Czech Republic},
+  series = {EuroSys '13}
 }
 
 @InProceedings{TCS:DISC2018,
@@ -631,6 +667,41 @@
   doi =		{10.4230/LIPIcs.DISC.2018.14},
 }
 
+@article{TAPIR:TOCS2018,
+  author = {Zhang, Irene and Sharma, Naveen Kr. and Szekeres, Adriana and Krishnamurthy, Arvind and Ports, Dan R. K.},
+  title = {Building Consistent Transactions with Inconsistent Replication},
+  year = {2018},
+  issue_date = {December 2018},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {35},
+  number = {4},
+  issn = {0734-2071},
+  url = {https://doi.org/10.1145/3269981},
+  doi = {10.1145/3269981},
+  journal = {ACM Trans. Comput. Syst.},
+  month = dec,
+  articleno = {12},
+  numpages = {37},
+}
+
+@article{VisibilityControl:VLDB2019,
+  author = {Fan, Hua and Golab, Wojciech},
+  title = {Ocean Vista: Gossip-Based Visibility Control for Speedy Geo-Distributed Transactions},
+  year = {2019},
+  issue_date = {July 2019},
+  publisher = {VLDB Endowment},
+  volume = {12},
+  number = {11},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3342263.3342627},
+  doi = {10.14778/3342263.3342627},
+  journal = {Proc. VLDB Endow.},
+  month = jul,
+  pages = {1471–1484},
+  numpages = {14}
+}
+
 @article{Unifying:VLDB2019,
   author = {Maiyya, Sujaya and Nawab, Faisal and Agrawal, Divyakant and Abbadi, Amr El},
   title = {Unifying Consensus and Atomic Commitment for Effective Cloud Data Management},
@@ -649,6 +720,57 @@
 }
 
 % implementation
+@article{RSSI:VLDB2011,
+  author = {Jung, Hyungsoo and Han, Hyuck and Fekete, Alan and R\"{o}hm, Uwe},
+  title = {Serializable Snapshot Isolation for Replicated Databases in High-Update Scenarios},
+  year = {2011},
+  issue_date = {August 2011},
+  publisher = {VLDB Endowment},
+  volume = {4},
+  number = {11},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3402707.3402718},
+  doi = {10.14778/3402707.3402718},
+  journal = {Proc. VLDB Endow.},
+  month = aug,
+  pages = {783–794},
+  numpages = {12}
+}
+
+@article{MaaT:VLDB2014,
+  author = {Mahmoud, Hatem A. and Arora, Vaibhav and Nawab, Faisal and Agrawal, Divyakant and El Abbadi, Amr},
+  title = {MaaT: Effective and Scalable Coordination of Distributed Transactions in the Cloud},
+  year = {2014},
+  issue_date = {Janary 2014},
+  publisher = {VLDB Endowment},
+  volume = {7},
+  number = {5},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/2732269.2732270},
+  doi = {10.14778/2732269.2732270},
+  journal = {Proc. VLDB Endow.},
+  month = jan,
+  pages = {329–340},
+  numpages = {12}
+}
+
+@article{ConfluxDB:VLDB2014,
+  author = {Chairunnanda, Prima and Daudjee, Khuzaima and \"{O}zsu, M. Tamer},
+  title = {ConfluxDB: Multi-Master Replication for Partitioned Snapshot Isolation Databases},
+  year = {2014},
+  issue_date = {July 2014},
+  publisher = {VLDB Endowment},
+  volume = {7},
+  number = {11},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/2732967.2732970},
+  doi = {10.14778/2732967.2732970},
+  journal = {Proc. VLDB Endow.},
+  month = jul,
+  pages = {947–958},
+  numpages = {12}
+}
+
 @article{CCOptimality:VLDB2018,
   author = {Didona, Diego and Guerraoui, Rachid and Wang, Jingjing and Zwaenepoel, Willy},
   title = {Causal Consistency and Latency Optimality: Friend or Foe?},
@@ -664,6 +786,56 @@
   month = jul,
   pages = {1618–1632},
   numpages = {15}
+}
+
+@article{2PL+2PC:VLDB2019,
+  author = {Barthels, Claude and M\"{u}ller, Ingo and Taranov, Konstantin and Alonso, Gustavo and Hoefler, Torsten},
+  title = {Strong Consistency is Not Hard to Get: Two-Phase Locking and Two-Phase Commit on Thousands of Cores},
+  year = {2019},
+  issue_date = {September 2019},
+  publisher = {VLDB Endowment},
+  volume = {12},
+  number = {13},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3358701.3358702},
+  doi = {10.14778/3358701.3358702},
+  journal = {Proc. VLDB Endow.},
+  month = sep,
+  pages = {2325–2338},
+  numpages = {14}
+}
+
+@article{SLOG:VLDB2019,
+  author = {Ren, Kun and Li, Dennis and Abadi, Daniel J.},
+  title = {SLOG: Serializable, Low-Latency, Geo-Replicated Transactions},
+  year = {2019},
+  issue_date = {July 2019},
+  publisher = {VLDB Endowment},
+  volume = {12},
+  number = {11},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3342263.3342647},
+  doi = {10.14778/3342263.3342647},
+  journal = {Proc. VLDB Endow.},
+  month = jul,
+  pages = {1747–1761},
+  numpages = {15}
+}
+
+@article{Creek:arXiv2019,
+  author    = {Tadeusz Kobus and
+               Maciej Kokocinski and
+               Pawel T. Wojciechowski},
+  title     = {Creek: a General Mixed-Consistency Transactional Replication Scheme},
+  journal   = {CoRR},
+  volume    = {abs/1907.00748},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1907.00748},
+  archivePrefix = {arXiv},
+  eprint    = {1907.00748},
+  timestamp = {Mon, 08 Jul 2019 14:12:33 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1907-00748.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
 @inproceedings{TCC:SIGMOD2020,
@@ -708,6 +880,94 @@
   month = dec,
   articleno = {27},
   numpages = {34},
+}
+
+@inproceedings{MixT:PLDI2018,
+  author = {Milano, Matthew and Myers, Andrew C.},
+  title = {MixT: A Language for Mixing Consistency in Geodistributed Transactions},
+  year = {2018},
+  isbn = {9781450356985},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3192366.3192375},
+  doi = {10.1145/3192366.3192375},
+  booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+  pages = {226–241},
+  numpages = {16},
+  keywords = {Information Flow, Consistency, Transactions},
+  location = {Philadelphia, PA, USA},
+  series = {PLDI 2018}
+}
+
+@article{CoordAvoidance:VLDB2018,
+  author = {Whittaker, Michael and Hellerstein, Joseph M.},
+  title = {Interactive Checks for Coordination Avoidance},
+  year = {2018},
+  issue_date = {September 2018},
+  publisher = {VLDB Endowment},
+  volume = {12},
+  number = {1},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3275536.3275538},
+  doi = {10.14778/3275536.3275538},
+  journal = {Proc. VLDB Endow.},
+  month = sep,
+  pages = {14–27},
+  numpages = {14}
+}
+
+@article{IPA:VLDB2018,
+  author = {Balegas, Valter and Duarte, S\'{e}rgio and Ferreira, Carla and Rodrigues, Rodrigo and Pregui\c{c}a, Nuno},
+  title = {IPA: Invariant-Preserving Applications for Weakly Consistent Replicated Databases},
+  year = {2018},
+  issue_date = {December 2018},
+  publisher = {VLDB Endowment},
+  volume = {12},
+  number = {4},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3297753.3297760},
+  doi = {10.14778/3297753.3297760},
+  journal = {Proc. VLDB Endow.},
+  month = dec,
+  pages = {404–418},
+  numpages = {15}
+}
+
+% Systems
+
+@inproceedings{Azure:SOSP2011,
+  author = {Calder, Brad and Wang, Ju and Ogus, Aaron and Nilakantan, Niranjan and Skjolsvold, Arild and McKelvie, Sam and Xu, Yikang and Srivastav, Shashwat and Wu, Jiesheng and Simitci, Huseyin and Haridas, Jaidev and Uddaraju, Chakravarthy and Khatri, Hemal and Edwards, Andrew and Bedekar, Vaman and Mainali, Shane and Abbasi, Rafay and Agarwal, Arpit and Haq, Mian Fahim ul and Haq, Muhammad Ikram ul and Bhardwaj, Deepali and Dayanand, Sowmya and Adusumilli, Anitha and McNett, Marvin and Sankaran, Sriram and Manivannan, Kavitha and Rigas, Leonidas},
+  title = {Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency},
+  year = {2011},
+  isbn = {9781450309776},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2043556.2043571},
+  doi = {10.1145/2043556.2043571},
+  booktitle = {Proceedings of the Twenty-Third ACM Symposium on Operating Systems Principles},
+  pages = {143–157},
+  numpages = {15},
+  keywords = {distributed storage systems, Windows Azure, cloud storage},
+  location = {Cascais, Portugal},
+  series = {SOSP '11}
+}
+
+% New Hardwares
+@article{AvailabilityRDMA:VLDB2019,
+  author = {Zamanian, Erfan and Yu, Xiangyao and Stonebraker, Michael and Kraska, Tim},
+  title = {Rethinking Database High Availability with RDMA Networks},
+  year = {2019},
+  issue_date = {July 2019},
+  publisher = {VLDB Endowment},
+  volume = {12},
+  number = {11},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/3342263.3342639},
+  doi = {10.14778/3342263.3342639},
+  journal = {Proc. VLDB Endow.},
+  month = jul,
+  pages = {1637–1650},
+  numpages = {14}
 }
 
 %% Testing
