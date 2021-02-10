@@ -86,6 +86,23 @@
   series = {ICDE '00}
 }
 
+@article{HAT:VLDB2013,
+  author = {Bailis, Peter and Davidson, Aaron and Fekete, Alan and Ghodsi, Ali and Hellerstein, Joseph M. and Stoica, Ion},
+  title = {Highly Available Transactions: Virtues and Limitations},
+  year = {2013},
+  issue_date = {November 2013},
+  publisher = {VLDB Endowment},
+  volume = {7},
+  number = {3},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/2732232.2732237},
+  doi = {10.14778/2732232.2732237},
+  journal = {Proc. VLDB Endow.},
+  month = nov,
+  pages = {181–192},
+  numpages = {12}
+}
+
 @inproceedings{PushPull:PLDI2015,
   author = {Koskinen, Eric and Parkinson, Matthew},
   title = {The Push/Pull Model of Transactions},
@@ -297,6 +314,24 @@
 
 %%% Snapshot Isolation
 
+@article{ROAnomalySI:SIGMODRecord2004,
+  author = {Fekete, Alan and O'Neil, Elizabeth and O'Neil, Patrick},
+  title = {A Read-Only Transaction Anomaly under Snapshot Isolation},
+  year = {2004},
+  issue_date = {September 2004},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {33},
+  number = {3},
+  issn = {0163-5808},
+  url = {https://doi.org/10.1145/1031570.1031573},
+  doi = {10.1145/1031570.1031573},
+  journal = {SIGMOD Rec.},
+  month = sep,
+  pages = {12–14},
+  numpages = {3}
+}
+
 @inproceedings{GSI:SRDS2005,
   author = {Elnikety, Sameh and Zwaenepoel, Willy and Pedone, Fernando},
   title = {Database Replication Using Generalized Snapshot Isolation},
@@ -486,6 +521,22 @@
   series = {VLDB '84}
 }
 
+@inproceedings{ModularCC:SIGMOD2017,
+  author = {Su, Chunzhi and Crooks, Natacha and Ding, Cong and Alvisi, Lorenzo and Xie, Chao},
+  title = {Bringing Modular Concurrency Control to the Next Level},
+  year = {2017},
+  isbn = {9781450341974},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3035918.3064031},
+  doi = {10.1145/3035918.3064031},
+  booktitle = {Proceedings of the 2017 ACM International Conference on Management of Data},
+  pages = {283–297},
+  numpages = {15},
+  location = {Chicago, Illinois, USA},
+  series = {SIGMOD '17}
+}
+
 @article{CC:CSUR1981,
   author = {Bernstein, Philip A. and Goodman, Nathan},
   title = {Concurrency Control in Distributed Database Systems},
@@ -592,7 +643,25 @@
   series = {PODS '87}
 }
 
-@article{Paxos:VLDB2011,
+@article{PaxosCommit:TODS2006,
+  author = {Gray, Jim and Lamport, Leslie},
+  title = {Consensus on Transaction Commit},
+  year = {2006},
+  issue_date = {March 2006},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {31},
+  number = {1},
+  issn = {0362-5915},
+  url = {https://doi.org/10.1145/1132863.1132867},
+  doi = {10.1145/1132863.1132867},
+  journal = {ACM Trans. Database Syst.},
+  month = mar,
+  pages = {133–160},
+  numpages = {28},
+}
+
+@article{UsingPaxos:VLDB2011,
   author = {Rao, Jun and Shekita, Eugene J. and Tata, Sandeep},
   title = {Using Paxos to Build a Scalable, Consistent, and Highly Available Datastore},
   year = {2011},
@@ -609,11 +678,31 @@
   numpages = {12}
 }
 
-@article{Megastore:CIDR2011,
-  title={Megastore: Providing scalable, highly available storage for interactive services},
-  author={Baker, Jason and Bond, Chris and Corbett, James C and Furman, JJ and Khorlin, Andrey and Larson, James and Leon, Jean-Michel and Li, Yawei and Lloyd, Alexander and Yushprakh, Vadim},
-  booktitle = {(CIDR)},
-  year={2011}
+@inproceedings{Megastore:CIDR2011,
+  title = {Megastore: Providing scalable, highly available storage for interactive services},
+  author = {Baker, Jason and Bond, Chris and Corbett, James C and Furman, JJ and Khorlin, Andrey and Larson, James and Leon, Jean-Michel and Li, Yawei and Lloyd, Alexander and Yushprakh, Vadim},
+  booktitle = {Proceedings of the 5th Biennial Conference on Innovative Data Systems Research (CIDR' 11)},
+  year = {2011},
+  month = {January},
+  pages = {223--234},
+  numpages = {12},
+}
+
+@article{NotSerial:VLDB2012,
+  author = {Patterson, Stacy and Elmore, Aaron J. and Nawab, Faisal and Agrawal, Divyakant and El Abbadi, Amr},
+  title = {Serializability, Not Serial: Concurrency Control and Availability in Multi-Datacenter Datastores},
+  year = {2012},
+  issue_date = {July 2012},
+  publisher = {VLDB Endowment},
+  volume = {5},
+  number = {11},
+  issn = {2150-8097},
+  url = {https://doi.org/10.14778/2350229.2350261},
+  doi = {10.14778/2350229.2350261},
+  journal = {Proc. VLDB Endow.},
+  month = jul,
+  pages = {1459–1470},
+  numpages = {12}
 }
 
 @article{ReplicatedCommit:VLDB2013,
@@ -635,7 +724,7 @@
 
 @inproceedings{MDCC:EuroSys2013,
   author = {Kraska, Tim and Pang, Gene and Franklin, Michael J. and Madden, Samuel and Fekete, Alan},
-  title = {MDCC: Multi-Data Center Consistency},
+  title = {{MDCC}: Multi-Data Center Consistency},
   year = {2013},
   isbn = {9781450319942},
   publisher = {Association for Computing Machinery},
@@ -647,6 +736,20 @@
   numpages = {14},
   location = {Prague, Czech Republic},
   series = {EuroSys '13}
+}
+
+@inproceedings{CC+Consensus:OSDI2016,
+  author = {Mu, Shuai and Nelson, Lamont and Lloyd, Wyatt and Li, Jinyang},
+  title = {Consolidating Concurrency Control and Consensus for Commits under Conflicts},
+  year = {2016},
+  isbn = {9781931971331},
+  publisher = {USENIX Association},
+  address = {USA},
+  booktitle = {Proceedings of the 12th USENIX Conference on Operating Systems Design and Implementation},
+  pages = {517–532},
+  numpages = {16},
+  location = {Savannah, GA, USA},
+  series = {OSDI'16}
 }
 
 @InProceedings{TCS:DISC2018,
@@ -933,7 +1036,56 @@
   numpages = {15}
 }
 
+% Theory
+@inproceedings{CannotFast:SPAA2019,
+  author = {Didona, Diego and Fatourou, Panagiota and Guerraoui, Rachid and Wang, Jingjing and Zwaenepoel, Willy},
+  title = {Distributed Transactional Systems Cannot Be Fast},
+  year = {2019},
+  isbn = {9781450361842},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3323165.3323189},
+  doi = {10.1145/3323165.3323189},
+  booktitle = {The 31st ACM Symposium on Parallelism in Algorithms and Architectures},
+  pages = {369–380},
+  numpages = {12},
+  location = {Phoenix, AZ, USA},
+  series = {SPAA '19}
+}
+
 % Systems
+
+@inproceedings{Spanner:OSDI2012,
+  author = {Corbett, James C. and Dean, Jeffrey and Epstein, Michael and Fikes, Andrew and Frost, Christopher and Furman, J. J. and Ghemawat, Sanjay and Gubarev, Andrey and Heiser, Christopher and Hochschild, Peter and Hsieh, Wilson and Kanthak, Sebastian and Kogan, Eugene and Li, Hongyi and Lloyd, Alexander and Melnik, Sergey and Mwaura, David and Nagle, David and Quinlan, Sean and Rao, Rajesh and Rolig, Lindsay and Saito, Yasushi and Szymaniak, Michal and Taylor, Christopher and Wang, Ruth and Woodford, Dale},
+  title = {Spanner: Google's Globally-Distributed Database},
+  year = {2012},
+  isbn = {9781931971966},
+  publisher = {USENIX Association},
+  address = {USA},
+  booktitle = {Proceedings of the 10th USENIX Conference on Operating Systems Design and Implementation},
+  pages = {251–264},
+  numpages = {14},
+  location = {Hollywood, CA, USA},
+  series = {OSDI'12}
+}
+
+@article{Spanner:TOCS2013,
+  author = {Corbett, James C. and Dean, Jeffrey and Epstein, Michael and Fikes, Andrew and Frost, Christopher and Furman, J. J. and Ghemawat, Sanjay and Gubarev, Andrey and Heiser, Christopher and Hochschild, Peter and Hsieh, Wilson and Kanthak, Sebastian and Kogan, Eugene and Li, Hongyi and Lloyd, Alexander and Melnik, Sergey and Mwaura, David and Nagle, David and Quinlan, Sean and Rao, Rajesh and Rolig, Lindsay and Saito, Yasushi and Szymaniak, Michal and Taylor, Christopher and Wang, Ruth and Woodford, Dale},
+  title = {Spanner: Google’s Globally Distributed Database},
+  year = {2013},
+  issue_date = {August 2013},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {31},
+  number = {3},
+  issn = {0734-2071},
+  url = {https://doi.org/10.1145/2491245},
+  doi = {10.1145/2491245},
+  journal = {ACM Trans. Comput. Syst.},
+  month = aug,
+  articleno = {8},
+  numpages = {22},
+}
 
 @inproceedings{Azure:SOSP2011,
   author = {Calder, Brad and Wang, Ju and Ogus, Aaron and Nilakantan, Niranjan and Skjolsvold, Arild and McKelvie, Sam and Xu, Yikang and Srivastav, Shashwat and Wu, Jiesheng and Simitci, Huseyin and Haridas, Jaidev and Uddaraju, Chakravarthy and Khatri, Hemal and Edwards, Andrew and Bedekar, Vaman and Mainali, Shane and Abbasi, Rafay and Agarwal, Arpit and Haq, Mian Fahim ul and Haq, Muhammad Ikram ul and Bhardwaj, Deepali and Dayanand, Sowmya and Adusumilli, Anitha and McNett, Marvin and Sankaran, Sriram and Manivannan, Kavitha and Rigas, Leonidas},
@@ -947,7 +1099,6 @@
   booktitle = {Proceedings of the Twenty-Third ACM Symposium on Operating Systems Principles},
   pages = {143–157},
   numpages = {15},
-  keywords = {distributed storage systems, Windows Azure, cloud storage},
   location = {Cascais, Portugal},
   series = {SOSP '11}
 }
@@ -971,6 +1122,22 @@
 }
 
 %% Testing
+@inproceedings{RushMon:SIGMOD2018,
+  author = {Shang, Zechao and Yu, Jeffrey Xu and Elmore, Aaron J.},
+  title = {RushMon: Real-Time Isolation Anomalies Monitoring},
+  year = {2018},
+  isbn = {9781450347037},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3183713.3196932},
+  doi = {10.1145/3183713.3196932},
+  booktitle = {Proceedings of the 2018 International Conference on Management of Data},
+  pages = {647–662},
+  numpages = {16},
+  location = {Houston, TX, USA},
+  series = {SIGMOD '18}
+}
+
 @article{CLOTHO:OOPSLA2019,
   author = {Rahmani, Kia and Nagar, Kartik and Delaware, Benjamin and Jagannathan, Suresh},
   title = {CLOTHO: Directed Test Generation for Weakly Consistent Database Systems},

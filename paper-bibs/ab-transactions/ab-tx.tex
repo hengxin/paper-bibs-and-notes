@@ -81,6 +81,20 @@
   It also discusses ``Mixing of Isolation Levels''.
 }
 
+\bib{\bibentry{HAT:VLDB2013}}
+\note{\it
+  In this work, we consider the problem of providing
+  Highly Available Transactions (HATs):
+  transactional guarantees that do not suffer unavailability
+  during system partitions or incur high network latency.
+  We introduce a taxonomy of highly available systems
+  and analyze existing ACID isolation
+  and distributed data consistency guarantees
+  to identify which can and cannot be achieved in HAT systems.
+  This unifies the literature on weak transactional isolation,
+  replica consistency, and highly available systems.
+}
+
 \bib{\bibentry{PushPull:PLDI2015}}
 \note{\it
   We present a general theory of serializability,
@@ -205,6 +219,24 @@
 }
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Snapshot Isolation} \label{ss:si}
+
+\bib{\bibentry{ROAnomalySI:SIGMODRecord2004}}
+\note{\it
+  It has been widely assumed that, under SI,
+  read-only transactions always execute serializably
+  provided the concurrent update transactions are serializable.
+  The reason for this is that
+  all SI reads return values from a single instant of time
+  when all committed transactions have completed their writes
+  and no writes of non-committed transactions are visible.
+  This seems to imply that read-only transactions will not read anomalous results
+  so long as the update transactions with which
+  they execute do not write such results.
+  In the current note, however, we exhibit an example
+  contradicting these assumptions:
+  it is possible for an SI history to be non-serializable
+  while the sub-history containing all update transactions is serializable.
+}
 
 \bib{\bibentry{GSI:SRDS2005}}
 \note{\it
@@ -339,6 +371,19 @@
 \note{\it
   Certification by Intervals of Timestamps in Distributed Database Systems.
 }
+
+\bib{\bibentry{ModularCC:SIGMOD2017}}
+\note{\it
+  This paper presents Tebaldi, a distributed key-value store
+  that explores new ways to harness the performance opportunity
+  of combining different specialized concurrency control mechanisms (CCs)
+  within the same database.
+  Tebaldi partitions conflicts at a fine granularity
+  and matches them to specialized CCs within a hierarchical framework
+  that is modular, extensible, and able to
+  support a wide variety of concurrency control techniques,
+  from single-version to multiversion and from lock-based to timestamp-based.
+}
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview} \label{ss:cc-overview}
 
@@ -406,7 +451,16 @@
   A knowledge-theoretic analysis of atomic commitment protocols.
 }
 
-\bib{\bibentry{Paxos:VLDB2011}}
+\bib{\bibentry{PaxosCommit:TODS2006}}
+\note{\it
+  The Paxos Commit algorithm runs a Paxos consensus algorithm
+  on the commit/abort decision of each participant
+  to obtain a transaction commit protocol
+  that uses 2F + 1 coordinators and makes progress
+  if at least F + 1 of them are working properly.
+}
+
+\bib{\bibentry{UsingPaxos:VLDB2011}}
 \note{\it
   Spinnaker is an experimental datastore
   that is designed to run on a large cluster of commodity servers
@@ -437,6 +491,25 @@
   that uses Paxos to replicate primary user data across datacenters on every write.
 }
 
+\bib{\bibentry{NotSerial:VLDB2012}}
+\note{\it
+  We first develop and analyze a transaction management
+  and replication protocol based on
+  a straightforward implementation of the Paxos algorithm.
+  Our investigation reveals that this protocol
+  acts as a concurrency prevention mechanism
+  rather than a concurrency control mechanism.
+  We then propose an enhanced protocol
+  called Paxos with Combination and Promotion (Paxos-CP)
+  that provides true transaction concurrency
+  while requiring the same per instance message complexity
+  as the basic Paxos protocol.
+  Finally, we compare the performance of Paxos and Paxos-CP
+  in a multi-datacenter experimental study,
+  and we demonstrate that Paxos-CP results in
+  significantly fewer aborted transactions than basic Paxos.
+}
+
 \bib{\bibentry{ReplicatedCommit:VLDB2013}}
 \note{\it
   Spanner uses Two-Phase Commit and Two-Phase Locking
@@ -452,6 +525,13 @@
   by running Two-Phase Commit multiple times in different datacenters
   and using Paxos to reach consensus among datacenters
   as to whether the transaction should commit.
+  Doing so not only replaces several inter-datacenter communication trips
+  with intra-datacenter communication trips,
+  but also allows us to integrate atomic commitment and isolation protocols
+  with consistent replication protocols to
+  further reduce the number of cross-datacenter communication trips
+  needed for consistent replication;
+  for example, by eliminating the need for an election phase in Paxos.
 }
 
 \bib{\bibentry{MDCC:EuroSys2013}}
@@ -470,6 +550,25 @@
   in the normal operational case independent of the master-location
   and by scaling linearly with the number of machines
   as long as transaction conflict rates permit.
+}
+
+\bib{\bibentry{CC+Consensus:OSDI2016}}
+\note{\it
+  In this paper, we make the key observation
+  that the coordination required for concurrency control
+  and consensus is highly similar.
+  Specifically, each tries to ensure
+  the serialization graph of transactions is acyclic.
+  We exploit this insight in the design of Janus,
+  a unified concurrency control and consensus protocol.
+
+  Like MDCC and TAPIR,
+  Janus can commit unconflicted transactions in this class
+  in one round-trip.
+  Unlike MDCC and TAPIR, Janus avoids aborts due to contention:
+  it commits conflicted transactions in this class
+  in at most two round-trips as long as
+  the network is well behaved and a majority of each server replica is alive.
 }
 
 \bib{\bibentry{TCS:DISC2018}}
@@ -658,6 +757,30 @@
   We present protocols for MTCC implemented in a system called HYDROCACHE.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Theory: Complexity and Limitations}
+\label{section:theory}
+
+\bib{\bibentry{CannotFast:SPAA2019}}
+\note{\it
+  We prove that no fully transactional system
+  can provide fast read transactions
+  (including read-only ones that are considered
+  the most frequent in practice).
+  Specifically, to achieve fast read transactions,
+  the system has to give up support of transactions
+  that write more than one object.
+  We prove this impossibility result for distributed storage systems
+  that are causally consistent, i.e.,
+  they do not require to ensure any strong form of consistency.
+  Therefore, our result holds also for any system
+  that ensures a consistency level stronger than causal consistency,
+  e.g., strict serializability.
+  The impossibility result holds even for systems
+  that store only two objects
+  (and support at least two servers and at least four clients).
+  It also holds for systems that are partially replicated.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formal Methods} \label{section:formal-methods}
 
 \bib{\bibentry{ProgramLogic2PL:TR2017}}
@@ -738,6 +861,21 @@
   load balancing, and replication systems.
 }
 
+\bib{\bibentry{Spanner:TOCS2013}}
+\note{\it
+  Spanner is Google's scalable, multiversion,
+  globally distributed, and synchronously replicated database.
+  It is the first system to distribute data at global scale
+  and support externally-consistent distributed transactions.
+  This article describes how Spanner is structured, its feature set,
+  the rationale underlying various design decisions,
+  and a novel time API that exposes clock uncertainty.
+  This API and its implementation are critical
+  to supporting external consistency and a variety of powerful features:
+  nonblocking reads in the past, lock-free snapshot transactions,
+  and atomic schema changes, across all of Spanner.
+}
+
 \subsection{New Hardwares} \label{ss:hardware}
 
 \bib{\bibentry{AvailabilityRDMA:VLDB2019}}
@@ -759,6 +897,18 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Testing} \label{section:testing}
+
+\bib{\bibentry{RushMon:SIGMOD2018}}
+\note{\it
+  $\dots$ these systems need an indicator to report
+  the number of ``bad event'' caused by ``out-of-order'' executions.
+  In this paper, we tackle this problem.
+  Based on transaction processing theory,
+  we find the number of cycles in the dependency graph,
+  and demonstrate it is a good indicator.
+  With this observation,
+  we propose the first real-time isolation anomalies monitor.
+}
 
 \bib{\bibentry{CLOTHO:OOPSLA2019}}
 \note{\it
