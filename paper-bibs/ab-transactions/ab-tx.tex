@@ -337,6 +337,57 @@
   when nonserializable executions of applications can occur under SI.
 }
 
+\bib{\bibentry{AutomatingSIAnomalies:VLDB2007}}
+\note{\it
+  In this paper we address several issues in
+  extending the earlier theory to practical detection/correction of anomalies.
+  We first show how to mechanically find a set of programs
+  which is large enough so that
+  we ensure that all executions will be free of SI anomalies,
+  by modifying these programs appropriately.
+  We then address the problem of false positives,
+  i.e., transaction programs wrongly identified
+  as possibly leading to anomalies,
+  and present techniques that can significantly reduce such false positives.
+  Unlike earlier work, our techniques are designed to be automated,
+  rather than manually carried out.
+  We describe a tool which we are developing to carry out this task.
+}
+
+\bib{\bibentry{SerialSI:TODS2009}}
+\note{\it
+  This article describes a modification to
+  the concurrency control algorithm of a database management system that
+  automatically detects and prevents snapshot isolation anomalies
+  at runtime for arbitrary applications,
+  thus providing serializable isolation.
+}
+
+\bib{\bibentry{ConsistencyAnamoalies:VLDB2014}}
+\note{\it
+  While it is fairly well known how to
+  identify qualitatively the anomalies
+  that are possible under a certain isolation level,
+  it is much more difficult to detect and quantify such anomalies
+  during run-time of a given application.
+  In this paper, we present a new approach to
+  detect and quantify consistency anomalies
+  for arbitrary multi-tier application
+  running under any isolation levels ensuring at least read committed.
+}
+
+\bib{\bibentry{RushMon:SIGMOD2018}}
+\note{\it
+  To resolve these problems, these systems need an indicator
+  to report the number of bad events caused by out-of-order executions.
+  In this paper, we tackle this problem.
+  Based on transaction processing theory,
+  we find the number of cycles in the dependency graph,
+  and demonstrate it is a good indicator.
+  With this observation,
+  we propose the first real-time isolation anomalies monitor.
+}
+
 \bib{\bibentry{RobustTCC:CONCUR2019}}
 \note{\it
   In this paper, we investigate application-specific relationships
@@ -370,19 +421,6 @@
 \bib{\bibentry{Interval:VLDB1984}}
 \note{\it
   Certification by Intervals of Timestamps in Distributed Database Systems.
-}
-
-\bib{\bibentry{ModularCC:SIGMOD2017}}
-\note{\it
-  This paper presents Tebaldi, a distributed key-value store
-  that explores new ways to harness the performance opportunity
-  of combining different specialized concurrency control mechanisms (CCs)
-  within the same database.
-  Tebaldi partitions conflicts at a fine granularity
-  and matches them to specialized CCs within a hierarchical framework
-  that is modular, extensible, and able to
-  support a wide variety of concurrency control techniques,
-  from single-version to multiversion and from lock-based to timestamp-based.
 }
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Overview} \label{ss:cc-overview}
@@ -442,6 +480,61 @@
   restart-oriented locking methods, two-phase processing methods
   including optimistic CC, and hybrid methods
   (combining optimistic CC and locking) in centralized systems.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Hybrid Concurrency Control}
+\label{ss:hybrid-cc}
+
+\bib{\bibentry{MCC:SOSP2015}}
+\note{\it
+  This paper describes the design, implementation,
+  and evaluation of Callas, a distributed database system that
+  offers to unmodified, transactional ACID applications
+  the opportunity to achieve a level of performance
+  that can currently only be reached by
+  rewriting all or part of the application in a BASE/NoSQL style.
+  The key to combining performance and ease of programming
+  is to decouple the ACID abstraction,
+  which Callas offers identically for all transactions,
+  from the mechanism used to support it.
+  MCC, the new Modular approach to Concurrency Control
+  at the core of Callas, makes it possible to partition transactions
+  in groups with the guarantee that,
+  as long as the concurrency control mechanism
+  within each group upholds a given isolation property,
+  that property will also hold among transactions in different groups.
+}
+
+\bib{\bibentry{ComposingCC:PLDI2015}}
+\note{\it
+  Concurrency control poses significant challenges
+  when composing computations over multiple data-structures
+  (objects) with different concurrency-control implementations.
+  We formalize the usually desired requirements
+  (serializability, abort-safety, deadlock-safety, and opacity)
+  as well as stronger versions of these properties that enable composition.
+  We show how to compose protocols satisfying these properties
+  so that the resulting combined protocol also satisfies these properties.
+  Our approach generalizes well-known protocols
+  (such as two-phase-locking and two-phase-commit)
+  and leads to new protocols.
+  We apply this theory to show how we can safely
+  compose optimistic and pessimistic concurrency control.
+  For example, we show how we can execute a transaction
+  that accesses two objects, one controlled by an STM and another by locking.
+}
+
+\bib{\bibentry{ModularCC:SIGMOD2017}}
+\note{\it
+  This paper presents Tebaldi, a distributed key-value store
+  that explores new ways to harness the performance opportunity
+  of combining different specialized concurrency control mechanisms (CCs)
+  within the same database.
+  Tebaldi partitions conflicts at a fine granularity
+  and matches them to specialized CCs within a hierarchical framework
+  that is modular, extensible, and able to
+  support a wide variety of concurrency control techniques,
+  from single-version to multiversion and from lock-based to timestamp-based.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Atomic Commitment and Consensus} \label{ss:ac-consensus}

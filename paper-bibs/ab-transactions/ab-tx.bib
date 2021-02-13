@@ -555,6 +555,38 @@
   numpages = {37}
 }
 
+@inproceedings{MCC:SOSP2015,
+  author = {Xie, Chao and Su, Chunzhi and Littley, Cody and Alvisi, Lorenzo and Kapritsos, Manos and Wang, Yang},
+  title = {High-Performance ACID via Modular Concurrency Control},
+  year = {2015},
+  isbn = {9781450338349},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2815400.2815430},
+  doi = {10.1145/2815400.2815430},
+  booktitle = {Proceedings of the 25th Symposium on Operating Systems Principles},
+  pages = {279–294},
+  numpages = {16},
+  location = {Monterey, California},
+  series = {SOSP '15}
+}
+
+@inproceedings{ComposingCC:PLDI2015,
+  author = {Ziv, Ofri and Aiken, Alex and Golan-Gueta, Guy and Ramalingam, G. and Sagiv, Mooly},
+  title = {Composing Concurrency Control},
+  year = {2015},
+  isbn = {9781450334686},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/2737924.2737970},
+  doi = {10.1145/2737924.2737970},
+  booktitle = {Proceedings of the 36th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+  pages = {240–249},
+  numpages = {10},
+  location = {Portland, OR, USA},
+  series = {PLDI '15}
+}
+
 %%% Locking
 @inproceedings{Locking:VLDB1975,
   author = {Gray, J. N. and Lorie, R. A. and Putzolu, G. R.},
@@ -1122,22 +1154,6 @@
 }
 
 %% Testing
-@inproceedings{RushMon:SIGMOD2018,
-  author = {Shang, Zechao and Yu, Jeffrey Xu and Elmore, Aaron J.},
-  title = {RushMon: Real-Time Isolation Anomalies Monitoring},
-  year = {2018},
-  isbn = {9781450347037},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  url = {https://doi.org/10.1145/3183713.3196932},
-  doi = {10.1145/3183713.3196932},
-  booktitle = {Proceedings of the 2018 International Conference on Management of Data},
-  pages = {647–662},
-  numpages = {16},
-  location = {Houston, TX, USA},
-  series = {SIGMOD '18}
-}
-
 @article{CLOTHO:OOPSLA2019,
   author = {Rahmani, Kia and Nagar, Kartik and Delaware, Benjamin and Jagannathan, Suresh},
   title = {CLOTHO: Directed Test Generation for Weakly Consistent Database Systems},
@@ -1172,7 +1188,72 @@
   numpages = {28},
 }
 
-% robustness
+% Robustness (and Dependency Graphs)
+@inproceedings{AutomatingSIAnomalies:VLDB2007,
+  author = {Jorwekar, Sudhir and Fekete, Alan and Ramamritham, Krithi and Sudarshan, S.},
+  title = {Automating the Detection of Snapshot Isolation Anomalies},
+  year = {2007},
+  isbn = {9781595936493},
+  publisher = {VLDB Endowment},
+  booktitle = {Proceedings of the 33rd International Conference on Very Large Data Bases},
+  pages = {1263–1274},
+  numpages = {12},
+  location = {Vienna, Austria},
+  series = {VLDB '07}
+}
+
+@article{SerialSI:TODS2009,
+  author = {Cahill, Michael J. and R\"{o}hm, Uwe and Fekete, Alan D.},
+  title = {Serializable Isolation for Snapshot Databases},
+  year = {2009},
+  issue_date = {December 2009},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {34},
+  number = {4},
+  issn = {0362-5915},
+  url = {https://doi.org/10.1145/1620585.1620587},
+  doi = {10.1145/1620585.1620587},
+  journal = {ACM Trans. Database Syst.},
+  month = dec,
+  articleno = {20},
+  numpages = {42},
+}
+
+@article{ConsistencyAnomalies:VLDB2014,
+  author = {Zellag, Kamal and Kemme, Bettina},
+  title = {Consistency Anomalies in Multi-Tier Architectures: Automatic Detection and Prevention},
+  year = {2014},
+  issue_date = {February  2014},
+  publisher = {Springer-Verlag},
+  address = {Berlin, Heidelberg},
+  volume = {23},
+  number = {1},
+  issn = {1066-8888},
+  url = {https://doi.org/10.1007/s00778-013-0318-x},
+  doi = {10.1007/s00778-013-0318-x},
+  journal = {The VLDB Journal},
+  month = feb,
+  pages = {147–172},
+  numpages = {26},
+}
+
+@inproceedings{RushMon:SIGMOD2018,
+  author = {Shang, Zechao and Yu, Jeffrey Xu and Elmore, Aaron J.},
+  title = {RushMon: Real-Time Isolation Anomalies Monitoring},
+  year = {2018},
+  isbn = {9781450347037},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3183713.3196932},
+  doi = {10.1145/3183713.3196932},
+  booktitle = {Proceedings of the 2018 International Conference on Management of Data},
+  pages = {647–662},
+  numpages = {16},
+  location = {Houston, TX, USA},
+  series = {SIGMOD '18}
+}
+
 @InProceedings{RobustTCC:CONCUR2019,
   author =	{Sidi Mohamed Beillahi and Ahmed Bouajjani and Constantin Enea},
   title =	{{Robustness Against Transactional Causal Consistency}},
