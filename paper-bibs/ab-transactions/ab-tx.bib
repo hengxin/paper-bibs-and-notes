@@ -306,7 +306,6 @@
   NUMBER = {RR-2802},
   INSTITUTION = {{INRIA}},
   YEAR = {1996},
-  KEYWORDS = {FAULT-TOLERANCE ; TRANSACTIONS ; CONSISTENCY ; CAUSALITY ; SERIALIZABILITY},
   PDF = {https://hal.inria.fr/inria-00073888/file/RR-2802.pdf},
   HAL_ID = {inria-00073888},
   HAL_VERSION = {v1},
@@ -519,6 +518,20 @@
   pages = {377–387},
   numpages = {11},
   series = {VLDB '84}
+}
+
+@inproceedings{Salt:OSDI2014,
+  author = {Xie, Chao and Su, Chunzhi and Kapritsos, Manos and Wang, Yang and Yaghmazadeh, Navid and Alvisi, Lorenzo and Mahajan, Prince},
+  title = {Salt: Combining ACID and BASE in a Distributed Database},
+  year = {2014},
+  isbn = {9781931971164},
+  publisher = {USENIX Association},
+  address = {USA},
+  booktitle = {Proceedings of the 11th USENIX Conference on Operating Systems Design and Implementation},
+  pages = {495–509},
+  numpages = {15},
+  location = {Broomfield, CO},
+  series = {OSDI'14}
 }
 
 @inproceedings{ModularCC:SIGMOD2017,
@@ -854,6 +867,22 @@
   numpages = {13}
 }
 
+@inproceedings{ReconfigurableTCS:PODC2019,
+  author = {Bravo, Manuel and Gotsman, Alexey},
+  title = {Reconfigurable Atomic Transaction Commit},
+  year = {2019},
+  isbn = {9781450362177},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3293611.3331590},
+  doi = {10.1145/3293611.3331590},
+  booktitle = {Proceedings of the 2019 ACM Symposium on Principles of Distributed Computing},
+  pages = {399–408},
+  numpages = {10},
+  location = {Toronto ON, Canada},
+  series = {PODC '19}
+}
+
 % implementation
 @article{RSSI:VLDB2011,
   author = {Jung, Hyungsoo and Han, Hyuck and Fekete, Alan and R\"{o}hm, Uwe},
@@ -982,7 +1011,6 @@
   address = {New York, NY, USA},
   url = {https://doi.org/10.1145/3318464.3389710},
   doi = {10.1145/3318464.3389710},
-  abstract = {We consider the setting of serverless Function-as-a-Service (FaaS) platforms, where storage services are disaggregated from the machines that support function execution. FaaS applications consist of compositions of functions, each of which may run on a separate machine and access remote storage. The challenge we address is improving I/O latency in this setting while also providing application-wide consistency. Previous work has explored providing causal consistency for individual I/Os by carefully managing the versions stored in a client-side data cache. In our setting, a single application may execute multiple functions across different nodes, and therefore issue interrelated I/Os to multiple distinct caches. This raises the challenge of Multisite Transactional Causal Consistency (MTCC): the ability to provide causal consistency for all I/Os within a given transaction even if it runs across multiple physical sites. We present protocols for MTCC implemented in a system called HYDROCACHE. Our evaluation demonstrates orders-of-magnitude performance improvements due to caching, while also protecting against consistency anomalies that otherwise arise frequently.},
   booktitle = {Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data},
   pages = {83–97},
   numpages = {15},
@@ -1029,7 +1057,6 @@
   booktitle = {Proceedings of the 39th ACM SIGPLAN Conference on Programming Language Design and Implementation},
   pages = {226–241},
   numpages = {16},
-  keywords = {Information Flow, Consistency, Transactions},
   location = {Philadelphia, PA, USA},
   series = {PLDI 2018}
 }
@@ -1086,6 +1113,19 @@
 }
 
 % Systems
+
+@inproceedings{Percolator:OSDI2010,
+  author = {Peng, Daniel and Dabek, Frank},
+  title = {Large-Scale Incremental Processing Using Distributed Transactions and Notifications},
+  year = {2010},
+  publisher = {USENIX Association},
+  address = {USA},
+  booktitle = {Proceedings of the 9th USENIX Conference on Operating Systems Design and Implementation},
+  pages = {251–264},
+  numpages = {14},
+  location = {Vancouver, BC, Canada},
+  series = {OSDI'10}
+}
 
 @inproceedings{Spanner:OSDI2012,
   author = {Corbett, James C. and Dean, Jeffrey and Epstein, Michael and Fikes, Andrew and Frost, Christopher and Furman, J. J. and Ghemawat, Sanjay and Gubarev, Andrey and Heiser, Christopher and Hochschild, Peter and Hsieh, Wilson and Kanthak, Sebastian and Kogan, Eugene and Li, Hongyi and Lloyd, Alexander and Melnik, Sergey and Mwaura, David and Nagle, David and Quinlan, Sean and Rao, Rajesh and Rolig, Lindsay and Saito, Yasushi and Szymaniak, Michal and Taylor, Christopher and Wang, Ruth and Woodford, Dale},

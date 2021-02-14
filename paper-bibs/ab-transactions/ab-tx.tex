@@ -485,6 +485,23 @@
 \subsection{Hybrid Concurrency Control}
 \label{ss:hybrid-cc}
 
+\bib{\bibentry{Salt:OSDI2014}}
+\note{\it
+  This paper presents Salt,
+  a distributed database that allows developers
+  to improve the performance and scalability of their ACID applications
+  through the incremental adoption of the BASE approach.
+  Salt’s motivation is rooted in the Pareto principle:
+  for many applications, the transactions that
+  actually test the performance limits of ACID are few.
+  To leverage this insight, Salt introduces BASE transactions,
+  a new abstraction that encapsulates the workflow of performance-critical transactions.
+  BASE transactions retain desirable properties like atomicity and durability,
+  but, through the new mechanism of Salt Isolation,
+  control which granularity of isolation they offer to other transactions,
+  depending on whether they are BASE or ACID.
+}
+
 \bib{\bibentry{MCC:SOSP2015}}
 \note{\it
   This paper describes the design, implementation,
@@ -675,6 +692,23 @@
   such as serializability and snapshot isolation.
   We then derive a provably correct crash-resilient protocol
   for implementing TCS through successive refinement.
+}
+
+\bib{\bibentry{ReconfigurableTCS:PODC2019}}
+\note{\it
+  Existing TCS protocols require $2f+1$ crash-stop replicas
+  per shard to tolerate $f$ failures.
+  In this paper we present atomic commit protocols
+  that require only $f+1$ replicas
+  and reconfigure the system upon failures
+  using an external reconfiguration service.
+  We furthermore rigorously prove that these protocols
+  correctly implement a recently proposed TCS specification.
+  We present protocols in two different models---
+  the standard asynchronous message-passing model
+  and a model with Remote Direct Memory Access (RDMA),
+  which allows a machine to access the memory of another machine
+  over the network without involving the latter's CPU.
 }
 
 \bib{\bibentry{TAPIR:TOCS2018}}
@@ -937,6 +971,12 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Systems} \label{section:systems}
+
+\bib{\bibentry{Percolator:OSDI2010}}
+\note{\it
+  We have built Percolator, a system for incrementally processing updates
+  to a large data set, and deployed it to create the Google web search index.
+}
 
 \bib{\bibentry{Azure:SOSP2011}}
 \note{\it
