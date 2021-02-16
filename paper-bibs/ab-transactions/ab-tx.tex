@@ -217,6 +217,17 @@
 \note{\it
   It defines Causal Serializability.
 }
+
+\bib{\bibentry{FastOpacity:SIGMOD2019}}
+\note{\it
+  This paper extends the design of FaRM ---
+  which provides strict serializability only for committed transactions
+  --- to provide opacity while maintaining FaRM's high throughput,
+  low latency, and high availability within a modern data center.
+  It uses timestamp ordering based on real time
+  with clocks synchronized to within tens of microseconds across a cluster,
+  and a failover protocol to ensure correctness across clock master failures.
+}
 %%%%%%%%%%%%%%%%%%%%
 \subsection{Snapshot Isolation} \label{ss:si}
 
@@ -363,7 +374,7 @@
   thus providing serializable isolation.
 }
 
-\bib{\bibentry{ConsistencyAnamoalies:VLDB2014}}
+\bib{\bibentry{ConsistencyAnomalies:VLDB2014}}
 \note{\it
   While it is fairly well known how to
   identify qualitatively the anomalies
@@ -374,6 +385,42 @@
   detect and quantify consistency anomalies
   for arbitrary multi-tier application
   running under any isolation levels ensuring at least read committed.
+}
+
+\bib{\bibentry{Robustness:CONCUR2016}}
+\note{\it
+  We present criteria to check whether applications
+  that rely on a database providing only weak consistency are robust,
+  i.e., behave as if they used a database providing serializability.
+  When this is the case, the application programmer
+  can reap the scalability benefits of weak consistency
+  while being able to easily check the desired correctness properties.
+  Our results handle systematically and uniformly
+  several recently proposed weak consistency models,
+  as well as a mechanism for strengthening consistency
+  in parts of an application.
+}
+
+\bib{\bibentry{AlgebraicLaws:CONCUR2017}}
+\note{\it
+  The semantics of such databases have been formalised
+  in two different styles,
+  one based on abstract executions and the other based on dependency graphs.
+  In this paper, we present a set of novel algebraic laws (inequalities)
+  that connect these two styles of specifications.
+  The laws relate binary relations used in a specification
+  based on abstract executions to those used in a specification
+  based on dependency graphs.
+  We then show that this algebraic connection
+  gives rise to so called robustness criteria:
+  conditions which ensure that a client program
+  of a weakly consistent database does not exhibit anomalous behaviours
+  due to weak consistency.
+  These criteria make it easy to reason about these client programs,
+  and may become a basis for dynamic or static program analyses.
+  For a certain class of consistency models specifications,
+  we prove a full abstraction result that
+  connects the two styles of specifications.
 }
 
 \bib{\bibentry{RushMon:SIGMOD2018}}
@@ -396,6 +443,29 @@
   if a given transactional program is robust against causal consistency,
   i.e., all its behaviors when executed over
   an arbitrary causally consistent database are serializable.
+}
+
+\bib{\bibentry{RobustnessLower:TODS2020}}
+\note{\it
+  In this paper, we address the robustness problem for
+  the lower SQL isolation levels READ UNCOMMITTED
+  and READ COMMITTED which are defined in terms of
+  the forbidden dirty write and dirty read patterns.
+  The first main contribution of this paper is that
+  we characterize robustness against both isolation levels
+  in terms of the absence of counter example schedules
+  of a specific form (split and multi-split schedules)
+  and by the absence of cycles in interference graphs
+  that satisfy various properties.
+  A critical difference with Fekete’s work,
+  is that the properties of cycles obtained
+  in this paper have to take the relative ordering of operations
+  within transactions into account as READ UNCOMMITTED
+  and READ COMMITTED do not satisfy the atomic visibility requirement.
+  A particular consequence is that the latter
+  renders the robustness problem against READ COMMITTED coNP-complete.
+  The second main contribution of this paper is the coNP-hardness proof.
+  For READ UNCOMMITTED, we obtain LOGSPACE-completeness.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Concurrency Control Protocols} \label{section:cc}
@@ -480,6 +550,37 @@
   restart-oriented locking methods, two-phase processing methods
   including optimistic CC, and hybrid methods
   (combining optimistic CC and locking) in centralized systems.
+}
+
+\bib{\bibentry{LockScheduling:VLDB2018}}
+\note{\it
+  In this paper, however, we show that the lock scheduling choices
+  have significant ramifications on the overall performance
+  of a transactional system.
+  Despite the large body of research on job scheduling
+  outside the database context,
+  lock scheduling presents subtle but challenging requirements
+  that render existing results on scheduling
+  inapt for a transactional database.
+  By carefully studying this problem,
+  we present the concept of contention-aware scheduling,
+  show the hardness of the problem,
+  and propose novel lock scheduling algorithms (LDSF and bLDSF),
+  which guarantee a constant factor approximation of the best scheduling.
+}
+
+\bib{\bibentry{LockRDMA:SIGMOD2018}}
+\note{\it
+  We present DSLR (Decentralized and Starvation-free
+  Lock management with RDMA), a decentralized lock manager
+  that targets distributed systems running on RDMA-enabled networks.
+  We demonstrate that, despite being fully decentralized,
+  DSLR prevents starvation and blind retries by guaranteeing
+  first-come-first-serve (FCFS) scheduling
+  without maintaining explicit queues.
+  We adapt Lamport's bakery algorithm to an RDMA-enabled environment
+  with multiple bakers,
+  utilizing only one-sided READ and atomic FA operations.
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hybrid Concurrency Control}
@@ -785,6 +886,25 @@
   in the serialization graph.
 }
 
+\bib{\bibentry{RedBlue:OSDI2012}}
+\note{\it
+  We make three contributions to address this tension.
+  First, we propose RedBlue consistency,
+  which enables blue operations to be fast (and eventually consistent)
+  while the remaining red operations are strongly consistent (and slow).
+  Second, to make use of fast operation whenever possible
+  and only resort to strong consistency when needed,
+  we identify conditions delineating
+  when operations can be blue and must be red.
+  Third, we introduce a method that increases
+  the space of potential blue operations
+  by breaking them into separate generator and shadow phases.
+  We built a coordination infrastructure called Gemini
+  that offers RedBlue consistency,
+  and we report on our experience modifying the TPC-W
+  and RUBiS benchmarks and an online social network to use Gemini.
+}
+
 \bib{\bibentry{MaaT:VLDB2014}}
 \note{\it
   Very little theoretical work has been done to
@@ -808,12 +928,50 @@
   to provide consistent and scalable replication with SI.
 }
 
+\bib{\bibentry{SIEVE:OSDI2014}}
+\note{\it
+  In these systems, the programmer has to decide
+  which level to use for each operation.
+  We present SIEVE, a tool that relieves Java programmers
+  from this error-prone decision process,
+  allowing applications to automatically
+  extract good performance when possible,
+  while resorting to strong consistency
+  whenever required by the target semantics.
+  Taking as input a set of application-specific invariants
+  and a few annotations about merge semantics,
+  SIEVE performs a combination of static and dynamic analysis,
+  offline and at runtime, to determine
+  when it is necessary to use strong consistency
+  to preserve these invariants
+  and when it is safe to use causally consistent
+  commutative replicated data types (CRDTs).
+}
+
 \bib{\bibentry{CCOptimality:VLDB2018}}
 \note{\it
   In this paper, we show that such ``latency-optimal'' ROTs
   induce an extra overhead on writes that is so high that
   it actually jeopardizes performance even in read-dominated workloads.
   We show this result from a practical as well as from a theoretical angle.
+}
+
+\bib{\bibentry{PoR:ATC2018}}
+\note{\it
+  In this paper, we present a novel fine-grained consistency definition,
+  Partial Order-Restrictions consistency (or short, PoR consistency),
+  generalizing the trade-off between performance
+  and the amount of coordination paid to
+  restrict the ordering of certain operations.
+  To offer efficient PoR consistent replication,
+  we implement Olisipo, a coordination service
+  assigning different coordination policies
+  to various restrictions by taking into account
+  the relative frequency of the confined operations.
+  Our experimental results show that
+  PoR consistency significantly outperforms
+  a state-of-the-art solution (RedBlue consistency)
+  on a 3-data center RUBiS benchmark.
 }
 
 \bib{\bibentry{2PL+2PC:VLDB2019}}

@@ -311,6 +311,22 @@
   HAL_VERSION = {v1},
 }
 
+@inproceedings{FastOpacity:SIGMOD2019,
+  author = {Shamis, Alex and Renzelmann, Matthew and Novakovic, Stanko and Chatzopoulos, Georgios and Dragojevi\'{c}, Aleksandar and Narayanan, Dushyanth and Castro, Miguel},
+  title = {Fast General Distributed Transactions with Opacity},
+  year = {2019},
+  isbn = {9781450356435},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3299869.3300069},
+  doi = {10.1145/3299869.3300069},
+  booktitle = {Proceedings of the 2019 International Conference on Management of Data},
+  pages = {433–448},
+  numpages = {16},
+  location = {Amsterdam, Netherlands},
+  series = {SIGMOD '19}
+}
+
 %%% Snapshot Isolation
 
 @article{ROAnomalySI:SIGMODRecord2004,
@@ -671,6 +687,39 @@
   numpages = {50},
 }
 
+@article{LockScheduling:VLDB2018,
+  author = {Tian, Boyu and Huang, Jiamin and Mozafari, Barzan and Schoenebeck, Grant},
+  title = {Contention-Aware Lock Scheduling for Transactional Databases},
+  year = {2018},
+  issue_date = {January 2018},
+  publisher = {VLDB Endowment},
+  volume = {11},
+  number = {5},
+  issn = {2150-8097},
+  url = {https://doi.org/10.1145/3177732.3177740},
+  doi = {10.1145/3177732.3177740},
+  journal = {Proc. VLDB Endow.},
+  month = jan,
+  pages = {648–662},
+  numpages = {15}
+}
+
+@inproceedings{LockRDMA:SIGMOD2018,
+  author = {Yoon, Dong Young and Chowdhury, Mosharaf and Mozafari, Barzan},
+  title = {Distributed Lock Management with RDMA: Decentralization without Starvation},
+  year = {2018},
+  isbn = {9781450347037},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3183713.3196890},
+  doi = {10.1145/3183713.3196890},
+  booktitle = {Proceedings of the 2018 International Conference on Management of Data},
+  pages = {1571–1586},
+  numpages = {16},
+  location = {Houston, TX, USA},
+  series = {SIGMOD '18}
+}
+
 % atomic commitment and consensus
 @inproceedings{KnowledgeAC:PODS1987,
   author = {Hadzilacos, V.},
@@ -901,6 +950,20 @@
   numpages = {12}
 }
 
+@inproceedings{RedBlue:OSDI2012,
+  author = {Li, Cheng and Porto, Daniel and Clement, Allen and Gehrke, Johannes and Pregui\c{c}a, Nuno and Rodrigues, Rodrigo},
+  title = {Making Geo-Replicated Systems Fast as Possible, Consistent When Necessary},
+  year = {2012},
+  isbn = {9781931971966},
+  publisher = {USENIX Association},
+  address = {USA},
+  booktitle = {Proceedings of the 10th USENIX Conference on Operating Systems Design and Implementation},
+  pages = {265–278},
+  numpages = {14},
+  location = {Hollywood, CA, USA},
+  series = {OSDI'12}
+}
+
 @article{MaaT:VLDB2014,
   author = {Mahmoud, Hatem A. and Arora, Vaibhav and Nawab, Faisal and Agrawal, Divyakant and El Abbadi, Amr},
   title = {MaaT: Effective and Scalable Coordination of Distributed Transactions in the Cloud},
@@ -935,6 +998,19 @@
   numpages = {12}
 }
 
+@inproceedings {SIEVE:OSDI2014,
+  author = {Cheng Li and Joao Leit{\~a}o and Allen Clement and Nuno Pregui{\c c}a and Rodrigo Rodrigues and Viktor Vafeiadis},
+  title = {Automating the Choice of Consistency Levels in Replicated Systems},
+  booktitle = {2014 {USENIX} Annual Technical Conference ({USENIX} {ATC} 14)},
+  year = {2014},
+  isbn = {978-1-931971-10-2},
+  address = {Philadelphia, PA},
+  pages = {281--292},
+  url = {https://www.usenix.org/conference/atc14/technical-sessions/presentation/li_cheng_2},
+  publisher = {{USENIX} Association},
+  month = jun,
+}
+
 @article{CCOptimality:VLDB2018,
   author = {Didona, Diego and Guerraoui, Rachid and Wang, Jingjing and Zwaenepoel, Willy},
   title = {Causal Consistency and Latency Optimality: Friend or Foe?},
@@ -950,6 +1026,19 @@
   month = jul,
   pages = {1618–1632},
   numpages = {15}
+}
+
+@inproceedings {PoR:ATC2018,
+  author = {Cheng Li and Nuno Pregui{\c c}a and Rodrigo Rodrigues},
+  title = {Fine-grained consistency for geo-replicated systems},
+  booktitle = {2018 {USENIX} Annual Technical Conference ({USENIX} {ATC} 18)},
+  year = {2018},
+  isbn = {978-1-939133-01-4},
+  address = {Boston, MA},
+  pages = {359--372},
+  url = {https://www.usenix.org/conference/atc18/presentation/li-cheng},
+  publisher = {{USENIX} Association},
+  month = jul,
 }
 
 @article{2PL+2PC:VLDB2019,
@@ -1278,6 +1367,42 @@
   numpages = {26},
 }
 
+@InProceedings{Robustness:CONCUR2016,
+  author =	{Giovanni Bernardi and Alexey Gotsman},
+  title =	{{Robustness against Consistency Models with Atomic Visibility}},
+  booktitle =	{27th International Conference on Concurrency Theory (CONCUR 2016)},
+  pages =	{7:1--7:15},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-95977-017-0},
+  ISSN =	{1868-8969},
+  year =	{2016},
+  volume =	{59},
+  editor =	{Jos{\'e}e Desharnais and Radha Jagadeesan},
+  publisher =	{Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{http://drops.dagstuhl.de/opus/volltexte/2016/6165},
+  URN =		{urn:nbn:de:0030-drops-61652},
+  doi =		{10.4230/LIPIcs.CONCUR.2016.7},
+}
+
+@InProceedings{AlgebraicLaws:CONCUR2017,
+  author =	{Andrea Cerone and Alexey Gotsman and Hongseok Yang},
+  title =	{{Algebraic Laws for Weak Consistency}},
+  booktitle =	{28th International Conference on Concurrency Theory (CONCUR 2017)},
+  pages =	{26:1--26:18},
+  series =	{Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN =	{978-3-95977-048-4},
+  ISSN =	{1868-8969},
+  year =	{2017},
+  volume =	{85},
+  editor =	{Roland Meyer and Uwe Nestmann},
+  publisher =	{Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik},
+  address =	{Dagstuhl, Germany},
+  URL =		{http://drops.dagstuhl.de/opus/volltexte/2017/7794},
+  URN =		{urn:nbn:de:0030-drops-77946},
+  doi =		{10.4230/LIPIcs.CONCUR.2017.26},
+}
+
 @inproceedings{RushMon:SIGMOD2018,
   author = {Shang, Zechao and Yu, Jeffrey Xu and Elmore, Aaron J.},
   title = {RushMon: Real-Time Isolation Anomalies Monitoring},
@@ -1310,4 +1435,20 @@
   URL =		{http://drops.dagstuhl.de/opus/volltexte/2019/10932},
   URN =		{urn:nbn:de:0030-drops-109321},
   doi =		{10.4230/LIPIcs.CONCUR.2019.30},
+}
+
+@inproceedings{RobustnessLower:TODS2020,
+  author = {Ketsman, Bas and Koch, Christoph and Neven, Frank and Vandevoort, Brecht},
+  title = {Deciding Robustness for Lower SQL Isolation Levels},
+  year = {2020},
+  isbn = {9781450371087},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3375395.3387655},
+  doi = {10.1145/3375395.3387655},
+  booktitle = {Proceedings of the 39th ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems},
+  pages = {315–330},
+  numpages = {16},
+  location = {Portland, OR, USA},
+  series = {PODS'20}
 }
